@@ -55,6 +55,7 @@ func main() {
 				"characters": "/characters",
 				"attributes": "/attributes",
 			},*/
+<<<<<<< HEAD
 		})
 	})
 
@@ -62,6 +63,8 @@ func main() {
 		c.JSON(http.StatusNotFound, gin.H{
 			"message": "Page not found",
 			"docs": "https://docs.koyio.rest/",
+=======
+>>>>>>> d744c21f4ace255e1f69d377e58c343dc8bff80b
 		})
 	})
 
