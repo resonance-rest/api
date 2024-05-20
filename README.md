@@ -1,1 +1,9 @@
-rest api for wuthering waves, made in go deployed on railway.app
+# Introduction
+
+koyio.rest is a fan-made Wuthering Waves API, made with Go. The API endpoint is located at:
+
+{% code fullWidth="false" %}
+```
+https://koyio.rest/
+```
+{% endcode %}
