@@ -43,6 +43,10 @@ func main() {
 
 	r.Use(ToLowerMiddleware())
 
+	r.GET("/", func(c *gin.Context) {
+		c.Redirect(http.StatusMovedPermanently, "/api")
+	})
+
 	r.GET("/api/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"version": "1.0",
