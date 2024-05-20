@@ -44,7 +44,17 @@ func main() {
 	r.Use(ToLowerMiddleware())
 
 	r.GET("/", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{"statistics": gin.H{"characters": len(characters), "attributes": len(attributes)}})
+		c.JSON(http.StatusOK, gin.H{
+			"version": "1.0",
+			"statistics": gin.H{
+				"attributes": len(attributes),
+				"characters": len(characters),
+			},
+			"endpoints": gin.H{
+				"characters": "/characters",
+				"attributes": "/attributes",
+			},
+		})
 	})
 
 	// CHARACTERS
