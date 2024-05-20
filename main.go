@@ -29,13 +29,13 @@ type Attribute struct {
 func main() {
 	r := gin.Default()
 
-	characters, err := loadCharactersFromFile("api/characters.json")
+	characters, err := loadCharactersFromFile("data/characters.json")
 	if err != nil {
 		fmt.Println("Error loading characters:", err)
 		return
 	}
 
-	attributes, err := loadAttributesFromFile("api/attributes.json")
+	attributes, err := loadAttributesFromFile("data/attributes.json")
 	if err != nil {
 		fmt.Println("Error loading attributes:", err)
 		return
@@ -43,23 +43,23 @@ func main() {
 
 	r.Use(ToLowerMiddleware())
 
-	r.GET("/", func(c *gin.Context) {
+	r.GET("/api/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"version": "1.0",
 			"statistics": gin.H{
 				"attributes": len(attributes),
 				"characters": len(characters),
 			},
-			"endpoints": gin.H{
+			/*"endpoints": gin.H{
 				"characters": "/characters",
 				"attributes": "/attributes",
-			},
+			},*/
 		})
 	})
 
 	// CHARACTERS
 
-	r.GET("/characters", func(c *gin.Context) {
+	r.GET("/api/characters", func(c *gin.Context) {
 		var characterNames []string
 		for _, character := range characters {
 			characterNames = append(characterNames, character.Name)
@@ -67,7 +67,7 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{"characters": characterNames})
 	})
 
-	r.GET("/characters/:name", func(c *gin.Context) {
+	r.GET("/api/characters/:name", func(c *gin.Context) {
 		name := c.Param("name")
 
 		for _, character := range characters {
@@ -80,7 +80,7 @@ func main() {
 		c.JSON(http.StatusNotFound, gin.H{"message": "Character not found"})
 	})
 
-	r.GET("/characters/:name/portrait", func(c *gin.Context) {
+	r.GET("/api/characters/:name/portrait", func(c *gin.Context) {
 		name := c.Param("name")
 		filePath := fmt.Sprintf("./cdn/characters/portraits/%s.webp", name)
 		_, err := os.Stat(filePath)
@@ -94,7 +94,7 @@ func main() {
 
 	// r.StaticFS("/cdn/characters/portraits/", http.Dir("./cdn/characters/portraits"))
 
-	r.GET("/characters/:name/icon", func(c *gin.Context) {
+	r.GET("/api/characters/:name/icon", func(c *gin.Context) {
 		name := c.Param("name")
 		filePath := fmt.Sprintf("./cdn/characters/icons/%s.webp", name)
 		_, err := os.Stat(filePath)
@@ -110,7 +110,7 @@ func main() {
 
 	// ATTRIBUTES
 
-	r.GET("/attributes", func(c *gin.Context) {
+	r.GET("/api/attributes", func(c *gin.Context) {
 		var attributeNames []string
 		for _, attribute := range attributes {
 			attributeNames = append(attributeNames, attribute.Name)
@@ -118,7 +118,7 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{"attributes": attributeNames})
 	})
 
-	r.GET("/attributes/:name", func(c *gin.Context) {
+	r.GET("/api/attributes/:name", func(c *gin.Context) {
 		name := c.Param("name")
 
 		for _, attribute := range attributes {
@@ -131,7 +131,7 @@ func main() {
 		c.JSON(http.StatusNotFound, gin.H{"message": "Attribute not found"})
 	})
 
-	r.GET("/attributes/:name/icon", func(c *gin.Context) {
+	r.GET("/api/attributes/:name/icon", func(c *gin.Context) {
 		name := c.Param("name")
 		filePath := fmt.Sprintf("./cdn/attributes/icons/%s.webp", name)
 		_, err := os.Stat(filePath)
