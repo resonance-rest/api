@@ -50,10 +50,10 @@ func main() {
 				"attributes": len(attributes),
 				"characters": len(characters),
 			},
-			"endpoints": gin.H{
+			/*"endpoints": gin.H{
 				"characters": "/characters",
 				"attributes": "/attributes",
-			},
+			},*/
 		})
 	})
 
