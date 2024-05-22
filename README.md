@@ -8,6 +8,12 @@ This is **not** a final version, I need people to complete the game data, if you
 
 # 🔗 API Reference
 
+## Base URL
+
+```http
+  GET koyio.rest
+```
+
 ## Characters
 
 #### Get character list
