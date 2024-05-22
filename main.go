@@ -10,6 +10,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+docs_url := "https://github.com/whosneksio/wuwa.api/blob/main/README.md"
+
 type Character struct {
 	Name      string `json:"name"`
 	Quote     string `json:"quote,omitempty"`
@@ -46,7 +48,7 @@ func main() {
 	r.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"version": "1.0",
-			"docs": "https://docs.koyio.rest/",
+			"docs": docs_url,
 			"statistics": gin.H{
 				"attributes": len(attributes),
 				"characters": len(characters),
@@ -61,7 +63,7 @@ func main() {
 	r.NoRoute(func(c *gin.Context) {
 		c.JSON(http.StatusNotFound, gin.H{
 			"message": "Page not found",
-			"docs": "https://docs.koyio.rest/",
+			"docs": docs_url,
 		})
 	})
 
@@ -85,7 +87,7 @@ func main() {
 			}
 		}
 
-		c.JSON(http.StatusNotFound, gin.H{"message": "Character not found", "docs": "https://docs.koyio.rest/"})
+		c.JSON(http.StatusNotFound, gin.H{"message": "Character not found", "docs": docs_url})
 	})
 
 	r.GET("/characters/:name/portrait", func(c *gin.Context) {
@@ -93,7 +95,7 @@ func main() {
 		filePath := fmt.Sprintf("./cdn/characters/portraits/%s.webp", name)
 		_, err := os.Stat(filePath)
 		if err != nil {
-			c.JSON(http.StatusNotFound, gin.H{"message": "Portrait not found", "docs": "https://docs.koyio.rest/"})
+			c.JSON(http.StatusNotFound, gin.H{"message": "Portrait not found", "docs": docs_url})
 			return
 		}
 
@@ -107,7 +109,7 @@ func main() {
 		filePath := fmt.Sprintf("./cdn/characters/icons/%s.webp", name)
 		_, err := os.Stat(filePath)
 		if err != nil {
-			c.JSON(http.StatusNotFound, gin.H{"message": "Icon not found", "docs": "https://docs.koyio.rest/"})
+			c.JSON(http.StatusNotFound, gin.H{"message": "Icon not found", "docs": docs_url})
 			return
 		}
 
@@ -136,7 +138,7 @@ func main() {
 			}
 		}
 
-		c.JSON(http.StatusNotFound, gin.H{"message": "Attribute not found", "docs": "https://docs.koyio.rest/"})
+		c.JSON(http.StatusNotFound, gin.H{"message": "Attribute not found", "docs": docs_url})
 	})
 
 	r.GET("/attributes/:name/icon", func(c *gin.Context) {
@@ -144,7 +146,7 @@ func main() {
 		filePath := fmt.Sprintf("./cdn/attributes/icons/%s.webp", name)
 		_, err := os.Stat(filePath)
 		if err != nil {
-			c.JSON(http.StatusNotFound, gin.H{"message": "Attribute not found", "docs": "https://docs.koyio.rest/"})
+			c.JSON(http.StatusNotFound, gin.H{"message": "Attribute not found", "docs": docs_url})
 			return
 		}
 
