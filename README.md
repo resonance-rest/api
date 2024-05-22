@@ -1,9 +1,9 @@
 
 <br>
 
-Unofficial API & CDN for Wuthering Waves game on [**koyio.rest**](https://koyio.rest) - made with **Go**, stored data in **JSON** and deployed on [**Railway**](https://railway.app).
+Unofficial API & CDN for Wuthering Waves game on [**koyio.rest**](https://koyio.rest) ⎯ made with **Go**, stored data in **JSON** and deployed on [**Railway**](https://railway.app).
 
-This is **not** a final version, I need people to complete the game data, if you are interested, write me on [**Telegram**](https://t.me/whosneksio).
+This is **not** a final version, I need people to complete the game data ⎯ if you are interested, write me on [**Telegram**](https://t.me/whosneksio).
 
 
 # 🔗 API Reference
