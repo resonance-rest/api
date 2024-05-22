@@ -10,8 +10,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-docs_url := "https://github.com/whosneksio/wuwa.api/blob/main/README.md"
-
 type Character struct {
 	Name      string `json:"name"`
 	Quote     string `json:"quote,omitempty"`
@@ -29,6 +27,8 @@ type Attribute struct {
 }
 
 func main() {
+	docs_url := "https://github.com/whosneksio/wuwa.api/blob/main/README.md"
+
 	r := gin.Default()
 
 	characters, err := loadCharactersFromFile("data/characters.json")
