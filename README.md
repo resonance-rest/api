@@ -11,7 +11,7 @@ This is **not** a final version, I need people to complete the game data, if you
 ## Base URL
 
 ```http
-  GET koyio.rest
+koyio.rest
 ```
 
 ## Characters
