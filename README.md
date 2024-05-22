@@ -1,6 +1,6 @@
-# This is **not** a final version, I need people to complete the game data ⎯ if you are interested, write me on [**Telegram**](https://t.me/whosneksio){:target="_blank"}.
+# This is **not** a final version, I need people to complete the game data ⎯ if you are interested, write me on <a href="https://t.me/whosneksio" target="_blank">**Telegram**</a>.
 
-Unofficial API & CDN for Wuthering Waves game on [**koyio.rest**](https://koyio.rest){:target="_blank"} ⎯ made with **Go**, stored data in **JSON** and deployed on [**Railway**](https://railway.app){:target="_blank"}.
+Unofficial API & CDN for Wuthering Waves game on <a href="https://koyio.rest" target="_blank">**koyio.rest**</a> ⎯ made with **Go**, stored data in **JSON** and deployed on <a href="https://railway.app" target="_blank">**Railway**</a>.
 
 # 🔗 API Reference
 
