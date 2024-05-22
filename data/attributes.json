@@ -1,0 +1,48 @@
+[
+    {
+        "name": "Fusion",
+        "characters": [
+            {"name": "Chixia"},
+            {"name": "Encore"},
+            {"name": "Mortefi"}
+        ]
+    },
+    {
+        "name": "Glacio",
+        "characters": [
+            {"name": "Baizhi"},
+            {"name": "Lingyang"},
+            {"name": "Sanhua"}
+        ]
+    },
+    {
+        "name": "Aero",
+        "characters": [
+            {"name": "Aalto"},
+            {"name": "Jianxin"},
+            {"name": "Jiyan"},
+            {"name": "Yangyang"}
+        ]
+    },
+    {
+        "name": "Electro",
+        "characters": [
+            {"name": "Calcharo"},
+            {"name": "Yinlin"},
+            {"name": "Yuanwu"}
+        ]
+    },
+    {
+        "name": "Spectro",
+        "characters": [
+            {"name": "Verina"}
+        ]
+    },
+    {
+        "name": "Havoc",
+        "characters": [
+            {"name": "Danjin"},
+            {"name": "Taoqi"}
+        ]
+    }
+]
