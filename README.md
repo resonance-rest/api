@@ -63,17 +63,6 @@
 | `name`    | `string` | **Required** · name of a character   |
 | `number`  | `int`    | **Required** · number of a emoji     |
 
-
-#### Get attribute's data
-
-```http
-  GET https://koyio.rest/attributes/:name
-```
-
-| Parameter | Type     | Description                          |
-| :-------- | :------- | :----------------------------------- |
-| `name`    | `string` | **Required** · name of a attribute   |
-
 ## Attributes
 
 #### Get attribute list
