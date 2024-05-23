@@ -35,10 +35,12 @@ This is **not** a final version, I need people to complete the game data, if you
   GET https://koyio.rest/characters/:name/:type
 ```
 
-| Parameter | Type     | Description                          |
-| :-------- | :------- | :----------------------------------- |
-| `name`    | `string` | **Required** · name of a character   |
-| `type`    | `string` | **Required** · `icon` or `portrait`  |
+| Parameter | Type     | Description                                    |
+| :-------- | :------- | :----------------------------------------------|
+| `name`    | `string` | **Required** · name of a character             |
+| `type`    | `string` | **Required** · `icon`, `portrait` or `circle`  |
+
+
 
 ## Attributes
 

@@ -11,14 +11,14 @@ import (
 )
 
 type Character struct {
-	Name      string `json:"name"`
-	Quote     string `json:"quote,omitempty"`
-	Attribute string `json:"attribute,omitempty"`
-	Weapon    string `json:"weapon,omitempty"`
-	Rarity    int    `json:"rarity,omitempty"`
-	Class     string `json:"class,omitempty"`
+	Name       string `json:"name"`
+	Quote      string `json:"quote,omitempty"`
+	Attribute  string `json:"attribute,omitempty"`
+	Weapon     string `json:"weapon,omitempty"`
+	Rarity     int    `json:"rarity,omitempty"`
+	Class      string `json:"class,omitempty"`
 	Birthplace string `json:"birthplace,omitempty"`
-	Birthday  string `json:"birthday,omitempty"`
+	Birthday   string `json:"birthday,omitempty"`
 }
 
 type Attribute struct {
@@ -44,11 +44,10 @@ func main() {
 		return
 	}
 
-
 	r.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"version": "1.0",
-			"docs": docs_url,
+			"docs":    docs_url,
 			"statistics": gin.H{
 				"attributes": len(attributes),
 				"characters": len(characters),
@@ -63,9 +62,13 @@ func main() {
 	r.NoRoute(func(c *gin.Context) {
 		c.JSON(http.StatusNotFound, gin.H{
 			"message": "Page not found",
-			"docs": docs_url,
+			"docs":    docs_url,
 		})
 	})
+
+	// EMOJIS
+
+	r.StaticFS("/cdn/emojis/", http.Dir("./cdn/emojis/"))
 
 	// CHARACTERS
 
@@ -78,23 +81,21 @@ func main() {
 	})
 
 	r.GET("/characters/:name", func(c *gin.Context) {
-		name := strings.ToLower(c.Param("name"))  
-	
+		name := strings.ToLower(c.Param("name"))
+
 		for _, character := range characters {
-			if strings.ToLower(character.Name) == name { 
+			if strings.ToLower(character.Name) == name {
 				c.JSON(http.StatusOK, character)
 				return
 			}
 		}
-	
+
 		c.JSON(http.StatusNotFound, gin.H{"message": "Character not found", "docs": docs_url})
 	})
-	
-	
 
 	r.GET("/characters/:name/portrait", func(c *gin.Context) {
 		name := strings.ToLower(c.Param("name"))
-		filePath := fmt.Sprintf("./cdn/characters/portraits/%s.webp", name)
+		filePath := fmt.Sprintf("./cdn/characters/portraits/%s.png", name)
 		_, err := os.Stat(filePath)
 		if err != nil {
 			c.JSON(http.StatusNotFound, gin.H{"message": "Portrait not found", "docs": docs_url})
@@ -108,7 +109,7 @@ func main() {
 
 	r.GET("/characters/:name/icon", func(c *gin.Context) {
 		name := strings.ToLower(c.Param("name"))
-		filePath := fmt.Sprintf("./cdn/characters/icons/%s.webp", name)
+		filePath := fmt.Sprintf("./cdn/characters/icons/%s.png", name)
 		_, err := os.Stat(filePath)
 		if err != nil {
 			c.JSON(http.StatusNotFound, gin.H{"message": "Icon not found", "docs": docs_url})
@@ -119,6 +120,20 @@ func main() {
 	})
 
 	// r.StaticFS("/cdn/characters/icons/", http.Dir("./cdn/characters/icons"))
+
+	r.GET("/characters/:name/circle", func(c *gin.Context) {
+		name := strings.ToLower(c.Param("name"))
+		filePath := fmt.Sprintf("./cdn/characters/circles/%s.png", name)
+		_, err := os.Stat(filePath)
+		if err != nil {
+			c.JSON(http.StatusNotFound, gin.H{"message": "Circle not found", "docs": docs_url})
+			return
+		}
+
+		c.File(filePath)
+	})
+
+	// r.StaticFS("/cdn/characters/circles/", http.Dir("./cdn/characters/circles"))
 
 	// ATTRIBUTES
 
@@ -131,15 +146,15 @@ func main() {
 	})
 
 	r.GET("/attributes/:name", func(c *gin.Context) {
-		name := strings.ToLower(c.Param("name")) 
-	
+		name := strings.ToLower(c.Param("name"))
+
 		for _, attribute := range attributes {
-			if strings.ToLower(attribute.Name) == name {  
+			if strings.ToLower(attribute.Name) == name {
 				c.JSON(http.StatusOK, attribute)
 				return
 			}
 		}
-	
+
 		c.JSON(http.StatusNotFound, gin.H{"message": "Attribute not found", "docs": docs_url})
 	})
 
@@ -156,7 +171,6 @@ func main() {
 	})
 
 	// r.StaticFS("/cdn/attributes/icons/", http.Dir("./cdn/attributes/icons"))
-
 
 	r.Run(":8080")
 }
