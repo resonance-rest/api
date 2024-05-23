@@ -3,8 +3,11 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"net/http"
 	"os"
+	"path/filepath"
+	"strconv"
 	"strings"
 
 	"github.com/gin-gonic/gin"
@@ -26,8 +29,12 @@ type Attribute struct {
 	Characters []Character `json:"characters,omitempty"`
 }
 
+type Emojis struct {
+	Emojis []string `json:"emojis"`
+}
+
 func main() {
-	docs_url := "https://github.com/whosneksio/wuwa.api/blob/main/README.md"
+	docsURL := "https://github.com/whosneksio/wuwa.api/blob/main/README.md"
 
 	r := gin.Default()
 	r.Use(middleware())
@@ -46,29 +53,47 @@ func main() {
 
 	r.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
-			"version": "1.0",
-			"docs":    docs_url,
-			"statistics": gin.H{
-				"attributes": len(attributes),
-				"characters": len(characters),
-			},
-			/*"endpoints": gin.H{
-				"characters": "/characters",
-				"attributes": "/attributes",
-			},*/
+			"version":    "1.0",
+			"docs":       docsURL,
+			"statistics": gin.H{"attributes": len(attributes), "characters": len(characters)},
 		})
 	})
 
 	r.NoRoute(func(c *gin.Context) {
-		c.JSON(http.StatusNotFound, gin.H{
-			"message": "Page not found",
-			"docs":    docs_url,
-		})
+		c.JSON(http.StatusNotFound, gin.H{"message": "Page not found", "docs": docsURL})
 	})
 
 	// EMOJIS
 
-	r.StaticFS("/cdn/emojis/", http.Dir("./cdn/emojis/"))
+	r.GET("/characters/:name/emojis", func(c *gin.Context) {
+		name := strings.ToLower(c.Param("name"))
+		emojiList, err := emojisLoad(name)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+			return
+		}
+		c.JSON(http.StatusOK, emojiList)
+	})
+
+	r.GET("/characters/:name/emojis/:index", func(c *gin.Context) {
+		name := strings.ToLower(c.Param("name"))
+		indexStr := c.Param("index")
+		number, err := strconv.Atoi(indexStr)
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid index"})
+			return
+		}
+
+		emojiPath, err := emojisPerCharacter(name, number)
+		if err != nil {
+			c.JSON(http.StatusNotFound, gin.H{"error": "Emoji not found"})
+			return
+		}
+
+		c.File(emojiPath)
+	})
+
+	//r.StaticFS("/cdn/emojis/", http.Dir("./cdn/emojis/"))
 
 	// CHARACTERS
 
@@ -90,50 +115,20 @@ func main() {
 			}
 		}
 
-		c.JSON(http.StatusNotFound, gin.H{"message": "Character not found", "docs": docs_url})
+		c.JSON(http.StatusNotFound, gin.H{"message": "Character not found", "docs": docsURL})
 	})
 
-	r.GET("/characters/:name/portrait", func(c *gin.Context) {
-		name := strings.ToLower(c.Param("name"))
-		filePath := fmt.Sprintf("./cdn/characters/portraits/%s.png", name)
-		_, err := os.Stat(filePath)
-		if err != nil {
-			c.JSON(http.StatusNotFound, gin.H{"message": "Portrait not found", "docs": docs_url})
-			return
-		}
-
-		c.File(filePath)
-	})
-
-	// r.StaticFS("/cdn/characters/portraits/", http.Dir("./cdn/characters/portraits"))
-
-	r.GET("/characters/:name/icon", func(c *gin.Context) {
-		name := strings.ToLower(c.Param("name"))
-		filePath := fmt.Sprintf("./cdn/characters/icons/%s.png", name)
-		_, err := os.Stat(filePath)
-		if err != nil {
-			c.JSON(http.StatusNotFound, gin.H{"message": "Icon not found", "docs": docs_url})
-			return
-		}
-
-		c.File(filePath)
-	})
-
-	// r.StaticFS("/cdn/characters/icons/", http.Dir("./cdn/characters/icons"))
-
-	r.GET("/characters/:name/circle", func(c *gin.Context) {
-		name := strings.ToLower(c.Param("name"))
-		filePath := fmt.Sprintf("./cdn/characters/circles/%s.png", name)
-		_, err := os.Stat(filePath)
-		if err != nil {
-			c.JSON(http.StatusNotFound, gin.H{"message": "Circle not found", "docs": docs_url})
-			return
-		}
-
-		c.File(filePath)
-	})
-
-	// r.StaticFS("/cdn/characters/circles/", http.Dir("./cdn/characters/circles"))
+	for _, path := range []string{"portrait", "icon", "circle"} {
+		r.GET(fmt.Sprintf("/characters/:name/%s", path), func(c *gin.Context) {
+			name := strings.ToLower(c.Param("name"))
+			filePath := fmt.Sprintf("./cdn/characters/%s/%s.png", path, name)
+			if _, err := os.Stat(filePath); err != nil {
+				c.JSON(http.StatusNotFound, gin.H{"message": fmt.Sprintf("%s not found", strings.Title(path)), "docs": docsURL})
+				return
+			}
+			c.File(filePath)
+		})
+	}
 
 	// ATTRIBUTES
 
@@ -155,22 +150,20 @@ func main() {
 			}
 		}
 
-		c.JSON(http.StatusNotFound, gin.H{"message": "Attribute not found", "docs": docs_url})
+		c.JSON(http.StatusNotFound, gin.H{"message": "Attribute not found", "docs": docsURL})
 	})
 
-	r.GET("/attributes/:name/icon", func(c *gin.Context) {
-		name := strings.ToLower(c.Param("name"))
-		filePath := fmt.Sprintf("./cdn/attributes/icons/%s.webp", name)
-		_, err := os.Stat(filePath)
-		if err != nil {
-			c.JSON(http.StatusNotFound, gin.H{"message": "Attribute not found", "docs": docs_url})
-			return
-		}
-
-		c.File(filePath)
-	})
-
-	// r.StaticFS("/cdn/attributes/icons/", http.Dir("./cdn/attributes/icons"))
+	for _, path := range []string{"icon"} {
+		r.GET(fmt.Sprintf("/attributes/:name/%s", path), func(c *gin.Context) {
+			name := strings.ToLower(c.Param("name"))
+			filePath := fmt.Sprintf("./cdn/attributes/%s/%s.webp", path, name)
+			if _, err := os.Stat(filePath); err != nil {
+				c.JSON(http.StatusNotFound, gin.H{"message": fmt.Sprintf("%s not found", strings.Title(path)), "docs": docsURL})
+				return
+			}
+			c.File(filePath)
+		})
+	}
 
 	r.Run(":8080")
 }
@@ -210,4 +203,42 @@ func attributesLoad(filename string) ([]Attribute, error) {
 	}
 
 	return attributes, nil
+}
+
+func emojisLoad(charName string) (*Emojis, error) {
+	emojiList := &Emojis{}
+	files, err := ioutil.ReadDir(fmt.Sprintf("./cdn/emojis/%s", charName))
+	if err != nil {
+		return nil, err
+	}
+
+	for _, file := range files {
+		if strings.HasSuffix(file.Name(), ".png") {
+			emojiList.Emojis = append(emojiList.Emojis, strings.TrimSuffix(file.Name(), ".png"))
+		}
+	}
+
+	return emojiList, nil
+}
+
+func emojisPerCharacter(name string, index int) (string, error) {
+	emojisFolder := fmt.Sprintf("./cdn/emojis/%s", name)
+	files, err := ioutil.ReadDir(emojisFolder)
+	if err != nil {
+		return "", err
+	}
+
+	var pngFiles []string
+	for _, file := range files {
+		if filepath.Ext(file.Name()) == ".png" {
+			pngFiles = append(pngFiles, file.Name())
+		}
+	}
+
+	if index < 0 || index >= len(pngFiles) {
+		return "", fmt.Errorf("index out of range")
+	}
+
+	emojiPath := filepath.Join(emojisFolder, pngFiles[index])
+	return emojiPath, nil
 }

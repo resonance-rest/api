@@ -1,4 +1,4 @@
-# 🔗 Unofficial API & CDN for Wuthering Waves game on [**koyio.rest**](https://koyio.rest) - made with **Go**, stored data in **JSON** and deployed on [**Railway**](https://railway.app).
+# 🔗 Unofficial API & CDN for Wuthering Waves on [**koyio.rest**](https://koyio.rest) - made with **Go**, stored data in **JSON** and deployed on [**Railway**](https://railway.app).
 
 ### This is **not** a final version, I need people to complete the game data, if you are interested, write me on [**Telegram**](https://t.me/whosneksio).
 
@@ -40,7 +40,39 @@
 | `name`    | `string` | **Required** · name of a character             |
 | `type`    | `string` | **Required** · `icon`, `portrait` or `circle`  |
 
+## Emojis
 
+#### Get character's emoji list
+
+```http
+  GET https://koyio.rest/characters/:name/emojis
+```
+
+| Parameter | Type     | Description                          |
+| :-------- | :------- | :----------------------------------- |
+| `name`    | `string` | **Required** · name of a character   |
+
+#### Get the emoji of a character
+
+```http
+  GET https://koyio.rest/characters/:name/emojis/:number
+```
+
+| Parameter | Type     | Description                          |
+| :-------- | :------- | :----------------------------------- |
+| `name`    | `string` | **Required** · name of a character   |
+| `number`  | `int`    | **Required** · number of a emoji     |
+
+
+#### Get attribute's data
+
+```http
+  GET https://koyio.rest/attributes/:name
+```
+
+| Parameter | Type     | Description                          |
+| :-------- | :------- | :----------------------------------- |
+| `name`    | `string` | **Required** · name of a attribute   |
 
 ## Attributes
 
