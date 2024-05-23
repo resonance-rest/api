@@ -30,20 +30,20 @@ func main() {
 	docs_url := "https://github.com/whosneksio/wuwa.api/blob/main/README.md"
 
 	r := gin.Default()
+	r.Use(middleware())
 
-	characters, err := loadCharactersFromFile("data/characters.json")
+	characters, err := charactersLoad("data/characters.json")
 	if err != nil {
 		fmt.Println("Error loading characters:", err)
 		return
 	}
 
-	attributes, err := loadAttributesFromFile("data/attributes.json")
+	attributes, err := attributesLoad("data/attributes.json")
 	if err != nil {
 		fmt.Println("Error loading attributes:", err)
 		return
 	}
 
-	r.Use(ToLowerMiddleware())
 
 	r.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
@@ -78,20 +78,22 @@ func main() {
 	})
 
 	r.GET("/characters/:name", func(c *gin.Context) {
-		name := c.Param("name")
-
+		name := strings.ToLower(c.Param("name"))  
+	
 		for _, character := range characters {
-			if strings.EqualFold(character.Name, name) {
+			if strings.ToLower(character.Name) == name { 
 				c.JSON(http.StatusOK, character)
 				return
 			}
 		}
-
+	
 		c.JSON(http.StatusNotFound, gin.H{"message": "Character not found", "docs": docs_url})
 	})
+	
+	
 
 	r.GET("/characters/:name/portrait", func(c *gin.Context) {
-		name := c.Param("name")
+		name := strings.ToLower(c.Param("name"))
 		filePath := fmt.Sprintf("./cdn/characters/portraits/%s.webp", name)
 		_, err := os.Stat(filePath)
 		if err != nil {
@@ -105,7 +107,7 @@ func main() {
 	// r.StaticFS("/cdn/characters/portraits/", http.Dir("./cdn/characters/portraits"))
 
 	r.GET("/characters/:name/icon", func(c *gin.Context) {
-		name := c.Param("name")
+		name := strings.ToLower(c.Param("name"))
 		filePath := fmt.Sprintf("./cdn/characters/icons/%s.webp", name)
 		_, err := os.Stat(filePath)
 		if err != nil {
@@ -129,20 +131,20 @@ func main() {
 	})
 
 	r.GET("/attributes/:name", func(c *gin.Context) {
-		name := c.Param("name")
-
+		name := strings.ToLower(c.Param("name")) 
+	
 		for _, attribute := range attributes {
-			if strings.EqualFold(attribute.Name, name) {
+			if strings.ToLower(attribute.Name) == name {  
 				c.JSON(http.StatusOK, attribute)
 				return
 			}
 		}
-
+	
 		c.JSON(http.StatusNotFound, gin.H{"message": "Attribute not found", "docs": docs_url})
 	})
 
 	r.GET("/attributes/:name/icon", func(c *gin.Context) {
-		name := c.Param("name")
+		name := strings.ToLower(c.Param("name"))
 		filePath := fmt.Sprintf("./cdn/attributes/icons/%s.webp", name)
 		_, err := os.Stat(filePath)
 		if err != nil {
@@ -159,14 +161,14 @@ func main() {
 	r.Run(":8080")
 }
 
-func ToLowerMiddleware() gin.HandlerFunc {
+func middleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		c.Request.URL.Path = strings.ToLower(c.Request.URL.Path)
 		c.Next()
 	}
 }
 
-func loadCharactersFromFile(filename string) ([]Character, error) {
+func charactersLoad(filename string) ([]Character, error) {
 	file, err := os.Open(filename)
 	if err != nil {
 		return nil, err
@@ -181,7 +183,7 @@ func loadCharactersFromFile(filename string) ([]Character, error) {
 	return characters, nil
 }
 
-func loadAttributesFromFile(filename string) ([]Attribute, error) {
+func attributesLoad(filename string) ([]Attribute, error) {
 	file, err := os.Open(filename)
 	if err != nil {
 		return nil, err
