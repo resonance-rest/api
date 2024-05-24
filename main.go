@@ -156,7 +156,7 @@ func main() {
 	for _, path := range []string{"icon"} {
 		r.GET(fmt.Sprintf("/attributes/:name/%s", path), func(c *gin.Context) {
 			name := strings.ToLower(c.Param("name"))
-			filePath := fmt.Sprintf("./cdn/attributes/%s/%s.webp", path, name)
+			filePath := fmt.Sprintf("./cdn/attributes/%s/%s.png", path, name)
 			if _, err := os.Stat(filePath); err != nil {
 				c.JSON(http.StatusNotFound, gin.H{"message": fmt.Sprintf("%s not found", strings.Title(path)), "docs": docsURL})
 				return
