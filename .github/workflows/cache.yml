@@ -13,8 +13,10 @@ jobs:
         steps:
             - name: purge cache
               run: | 
-                  curl -X \
-                    -H "Authorization: ${{ secrets.CF_API_TOKEN }}" \
-                    -H "Content-Type: application/json" \
-                    --data '{"purge_everything":true}' \
-                    https://api.cloudflare.com/client/v4/zones/5bbc31d7cf963a53a7e40358b73925a9/purge_cache
+                curl \
+                -H "Authorization: ${{ secrets.CF_API_TOKEN }}" \
+                -H "Content-Type: application/json" \
+                -X POST \
+                --data '{"purge_everything":true}' \
+                https://api.cloudflare.com/client/v4/zones/5bbc31d7cf963a53a7e40358b73925a9/purge_cache
+
