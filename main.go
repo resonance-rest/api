@@ -3,11 +3,9 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"os"
-	"path/filepath"
-	"strconv"
 	"strings"
 
 	"github.com/gin-gonic/gin"
@@ -33,9 +31,10 @@ type Emojis struct {
 	Emojis []string `json:"emojis"`
 }
 
-func main() {
-	docsURL := "https://github.com/whosneksio/wuwa.api/blob/main/README.md"
+var docsURL = "https://github.com/whosneksio/wuwa.api/blob/main/README.md"
+var cdnURL = "http://cdn.resonance.rest/"
 
+func main() {
 	r := gin.Default()
 	r.Use(middleware())
 
@@ -66,7 +65,7 @@ func main() {
 	// EMOJIS
 
 	r.GET("/characters/:name/emojis", func(c *gin.Context) {
-		name := strings.ToLower(c.Param("name"))
+		name := c.Param("name")
 		emojiList, err := emojisLoad(name)
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
@@ -76,21 +75,35 @@ func main() {
 	})
 
 	r.GET("/characters/:name/emojis/:index", func(c *gin.Context) {
-		name := strings.ToLower(c.Param("name"))
-		indexStr := c.Param("index")
-		number, err := strconv.Atoi(indexStr)
+		name := c.Param("name")
+		index := c.Param("index")
+
+		// Construct the URL for the emoji
+		emojiURL := fmt.Sprintf("%semojis/%s/%s.png", cdnURL, name, index)
+
+		// Fetch the remote file
+		resp, err := http.Get(emojiURL)
 		if err != nil {
-			c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid index"})
+			c.JSON(http.StatusNotFound, gin.H{"error": "Failed to fetch emoji"})
+			return
+		}
+		defer resp.Body.Close()
+
+		// Check if response status code is OK
+		if resp.StatusCode != http.StatusOK {
+			c.JSON(resp.StatusCode, gin.H{"error": "Failed to fetch emoji"})
 			return
 		}
 
-		emojiPath, err := emojisPerCharacter(name, number)
+		// Set content type
+		c.Header("Content-Type", "image/png")
+
+		// Serve the remote file content as response
+		_, err = io.Copy(c.Writer, resp.Body)
 		if err != nil {
-			c.JSON(http.StatusNotFound, gin.H{"error": "Emoji not found"})
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to serve emoji"})
 			return
 		}
-
-		c.File(emojiPath)
 	})
 
 	//r.StaticFS("/cdn/emojis/", http.Dir("./cdn/emojis/"))
@@ -121,12 +134,26 @@ func main() {
 	for _, path := range []string{"portrait", "icon", "circle"} {
 		r.GET(fmt.Sprintf("/characters/:name/%s", path), func(c *gin.Context) {
 			name := strings.ToLower(c.Param("name"))
-			filePath := fmt.Sprintf("./cdn/characters/%ss/%s.png", path, name)
-			if _, err := os.Stat(filePath); err != nil {
+			remoteURL := fmt.Sprintf("%scharacters/%ss/%s.png", cdnURL, path, name)
+
+			resp, err := http.Get(remoteURL)
+			if err != nil {
 				c.JSON(http.StatusNotFound, gin.H{"message": fmt.Sprintf("%s not found", strings.Title(path)), "docs": docsURL})
 				return
 			}
-			c.File(filePath)
+			defer resp.Body.Close()
+			if resp.StatusCode != http.StatusOK {
+				c.JSON(resp.StatusCode, gin.H{"message": "Failed to fetch file from remote URL", "docs": docsURL})
+				return
+			}
+
+			c.Header("Content-Type", "image/png")
+
+			_, err = io.Copy(c.Writer, resp.Body)
+			if err != nil {
+				c.JSON(http.StatusInternalServerError, gin.H{"message": "Failed to serve file", "docs": docsURL})
+				return
+			}
 		})
 	}
 
@@ -156,12 +183,26 @@ func main() {
 	for _, path := range []string{"icon"} {
 		r.GET(fmt.Sprintf("/attributes/:name/%s", path), func(c *gin.Context) {
 			name := strings.ToLower(c.Param("name"))
-			filePath := fmt.Sprintf("./cdn/attributes/%s/%s.png", path, name)
-			if _, err := os.Stat(filePath); err != nil {
+			remoteURL := fmt.Sprintf("%sattributes/%s/%s.png", cdnURL, path, name)
+			resp, err := http.Get(remoteURL)
+			if err != nil {
 				c.JSON(http.StatusNotFound, gin.H{"message": fmt.Sprintf("%s not found", strings.Title(path)), "docs": docsURL})
 				return
 			}
-			c.File(filePath)
+			defer resp.Body.Close()
+
+			if resp.StatusCode != http.StatusOK {
+				c.JSON(resp.StatusCode, gin.H{"message": "Failed to fetch file from remote URL", "docs": docsURL})
+				return
+			}
+
+			c.Header("Content-Type", "image/png")
+
+			_, err = io.Copy(c.Writer, resp.Body)
+			if err != nil {
+				c.JSON(http.StatusInternalServerError, gin.H{"message": "Failed to serve file", "docs": docsURL})
+				return
+			}
 		})
 	}
 
@@ -207,38 +248,27 @@ func attributesLoad(filename string) ([]Attribute, error) {
 
 func emojisLoad(charName string) (*Emojis, error) {
 	emojiList := &Emojis{}
-	files, err := ioutil.ReadDir(fmt.Sprintf("./cdn/emojis/%s", charName))
-	if err != nil {
-		return nil, err
-	}
-
-	for _, file := range files {
-		if strings.HasSuffix(file.Name(), ".png") {
-			emojiList.Emojis = append(emojiList.Emojis, strings.TrimSuffix(file.Name(), ".png"))
+	for i := 0; ; i++ {
+		emojiPath, err := emojisPerCharacter(charName, fmt.Sprintf("%d", i))
+		if err != nil {
+			break
 		}
+		emojiList.Emojis = append(emojiList.Emojis, emojiPath)
 	}
-
 	return emojiList, nil
 }
 
-func emojisPerCharacter(name string, index int) (string, error) {
-	emojisFolder := fmt.Sprintf("./cdn/emojis/%s", name)
-	files, err := ioutil.ReadDir(emojisFolder)
+func emojisPerCharacter(name string, index string) (string, error) {
+	emojiURL := fmt.Sprintf("%semojis/%s/%s.png", cdnURL, name, index)
+	resp, err := http.Get(emojiURL)
 	if err != nil {
 		return "", err
 	}
+	defer resp.Body.Close()
 
-	var pngFiles []string
-	for _, file := range files {
-		if filepath.Ext(file.Name()) == ".png" {
-			pngFiles = append(pngFiles, file.Name())
-		}
+	if resp.StatusCode != http.StatusOK {
+		return "", fmt.Errorf("Failed to fetch emoji")
 	}
 
-	if index < 0 || index >= len(pngFiles) {
-		return "", fmt.Errorf("index out of range")
-	}
-
-	emojiPath := filepath.Join(emojisFolder, pngFiles[index])
-	return emojiPath, nil
+	return emojiURL, nil
 }
