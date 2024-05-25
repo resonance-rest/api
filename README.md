@@ -1,4 +1,4 @@
-# 🔗 Unofficial API & CDN for Wuthering Waves on [**koyio.rest**](https://koyio.rest) - made with **Go**, stored data in **JSON** and deployed on [**Railway**](https://railway.app).
+# 🔗 Unofficial API & CDN for Wuthering Waves on [**resonance.rest**](https://api.resonance.rest) - made with **Go**, stored data in **JSON** and deployed on [**Railway**](https://railway.app).
 
 ### This is **not** a final version, I need people to complete the game data, if you are interested, write me on [**Telegram**](https://t.me/whosneksio).
 
@@ -8,7 +8,7 @@
 ## Base URL
 
 ```http
-  https://koyio.rest/
+  https://api.resonance.rest/
 ```
 
 ## Characters
@@ -16,13 +16,13 @@
 #### Get character list
 
 ```http
-  GET https://koyio.rest/characters
+  GET https://api.resonance.rest/characters
 ```
 
 #### Get character's data
 
 ```http
-  GET https://koyio.rest/characters/:name
+  GET https://api.resonance.rest/characters/:name
 ```
 
 | Parameter | Type     | Description                          |
@@ -32,7 +32,7 @@
 #### Get a character's image
 
 ```http
-  GET https://koyio.rest/characters/:name/:type
+  GET https://api.resonance.rest/characters/:name/:type
 ```
 
 | Parameter | Type     | Description                                    |
@@ -45,7 +45,7 @@
 #### Get character's emoji list
 
 ```http
-  GET https://koyio.rest/characters/:name/emojis
+  GET https://api.resonance.rest/characters/:name/emojis
 ```
 
 | Parameter | Type     | Description                          |
@@ -55,7 +55,7 @@
 #### Get the emoji of a character
 
 ```http
-  GET https://koyio.rest/characters/:name/emojis/:number
+  GET https://api.resonance.rest/characters/:name/emojis/:number
 ```
 
 | Parameter | Type     | Description                          |
@@ -68,13 +68,13 @@
 #### Get attribute list
 
 ```http
-  GET https://koyio.rest/attributes
+  GET https://api.resonance.rest/attributes
 ```
 
 #### Get attribute's data
 
 ```http
-  GET https://koyio.rest/attributes/:name
+  GET https://api.resonance.rest/attributes/:name
 ```
 
 | Parameter | Type     | Description                          |
@@ -84,7 +84,7 @@
 #### Get a attribute's image
 
 ```http
-  GET https://koyio.rest/attributes/:name/:type
+  GET https://api.resonance.rest/attributes/:name/:type
 ```
 
 | Parameter | Type     | Description                          |

@@ -31,7 +31,7 @@ type Emojis struct {
 	Emojis []string `json:"emojis"`
 }
 
-var docsURL = "https://github.com/whosneksio/wuwa.api/blob/main/README.md"
+var docsURL = "https://github.com/whosneksio/resonance.rest/blob/main/README.md"
 var cdnURL = "http://cdn.resonance.rest/"
 
 func main() {
