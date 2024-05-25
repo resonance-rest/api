@@ -1,4 +1,4 @@
-name: purge cloudflare cache
+name: cache purge
 
 on:
   push:
