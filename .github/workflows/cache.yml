@@ -1,0 +1,24 @@
+name: purge cloudflare cache
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**/README.md'
+
+jobs:
+    purge:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            deployments: write
+        steps:
+            - name: purge cache
+              run: |
+                  curl -X \
+                    -H "Authorization: ${{ secrets.CF_API_TOKEN }}" \
+                    -H "Content-Type: application/json" \
+                    --data '{"purge_everything":true}' \
+                    https://api.cloudflare.com/client/v4/zones/${{ secrets.CF_ZONE_ID }}}/purge_cache
+                  echo "purged cache"
