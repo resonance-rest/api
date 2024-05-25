@@ -78,10 +78,8 @@ func main() {
 		name := c.Param("name")
 		index := c.Param("index")
 
-		// Construct the URL for the emoji
 		emojiURL := fmt.Sprintf("%semojis/%s/%s.png", cdnURL, name, index)
 
-		// Fetch the remote file
 		resp, err := http.Get(emojiURL)
 		if err != nil {
 			c.JSON(http.StatusNotFound, gin.H{"error": "Failed to fetch emoji"})
@@ -89,16 +87,13 @@ func main() {
 		}
 		defer resp.Body.Close()
 
-		// Check if response status code is OK
 		if resp.StatusCode != http.StatusOK {
 			c.JSON(resp.StatusCode, gin.H{"error": "Failed to fetch emoji"})
 			return
 		}
 
-		// Set content type
 		c.Header("Content-Type", "image/png")
 
-		// Serve the remote file content as response
 		_, err = io.Copy(c.Writer, resp.Body)
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to serve emoji"})
