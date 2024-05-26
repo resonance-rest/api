@@ -2,6 +2,7 @@
     "Gauntlets": [
         {
             "name": "Abyss Surges",
+            "description": "The Gauntlets pulsate with an uncontrollable force, emanating unspeakable anger from the depths of the unknown lake. As you don them, unleash your fury on helpless enemies. Feel its power surge through you.",
             "type": "Gauntlets",
             "rarity": 5,
             "stats": {
@@ -55,6 +56,7 @@
         },
         {
             "name": "Amity Accord",
+            "description": "A weapon designed to commemorate the Midnight Rangers' comradeship. 'Thin garments yield to icy moons, while armor withstands the chill of stars.'",
             "type": "Gauntlets",
             "rarity": 4,
             "stats": {
@@ -87,6 +89,7 @@
         },
         {
             "name": "Gauntlets of Night",
+            "description": "May victory prevail the lasting night. In addition to the sworn oath of protection, these gauntlets also commemorates the sacrifices of those brave souls.",
             "type": "Gauntlets",
             "rarity": 3,
             "stats": {
@@ -111,6 +114,7 @@
         },
         {
             "name": "Gauntlets of Voyager",
+            "description": "The Gauntlets provided by the Pioneer Association for the far walkers, with bright colors, not easy to lose, hard texture, can cope with various extreme environments for a long time, and are very popular among the explorer group.",
             "type": "Gauntlets",
             "rarity": 3,
             "stats": {
@@ -150,6 +154,7 @@
         },
         {
             "name": "Gauntlets#21D",
+            "description": "Huaxu Academy has independently improved and developed the first set of highly practical high-performance Gauntlets based on the previous source energy weapons, representing the care and warmth of the Academy, stable and lasting.",
             "type": "Gauntlets",
             "rarity": 4,
             "stats": {
@@ -211,6 +216,7 @@
         },
         {
             "name": "Guardian Gauntlets",
+            "description": "The first Jinzhou Magistrate, in memory of the mysterious person who helped defend the border and build the city, created the Guardian series under his guidance. Today, it has become an indispensable cornerstone in the development of new weapons.",
             "type": "Gauntlets",
             "rarity": 3,
             "stats": {
@@ -268,6 +274,7 @@
         },
         {
             "name": "Training Gauntlets",
+            "description": "These gauntlets are designed specifically for training and teaching, offering only the basic features.",
             "type": "Gauntlets",
             "rarity": 1,
             "stats": {
@@ -293,6 +300,7 @@
         },
         {
             "name": "Tyro Gauntlets",
+            "description": "The dawn of enduring endeavor. A pair of gauntlets designed for novice Resonators. Contains a power not to be underestimated under its simple outlook.",
             "type": "Gauntlets",
             "rarity": 2,
             "stats": {
@@ -320,6 +328,7 @@
     "Rectifier": [
         {
             "name": "Augment",
+            "description": "This Rectifier is a ceremonial weapon used by the Jinzhou Magistrate of Huanglong at the inauguration ceremony. The golden ginkgo leaf pattern represents that Huanglong should be like ginkgo, although it is left alone in the world, it is still prosperous and long-lasting.",
             "type": "Rectifier",
             "rarity": 4,
             "stats": {
@@ -352,6 +361,7 @@
         },
         {
             "name": "Comet Flare",
+            "description": "The Rectifier born from the aerial phenomenon. The forger integrates the feelings of witnessing the alien stars into the weapon, making it look delicate and light, but it can be stable and constant, and it can be responsive.",
             "type": "Rectifier",
             "rarity": 4,
             "stats": {
@@ -406,6 +416,7 @@
         },
         {
             "name": "Cosmic Ripples",
+            "description": "Take hold of the frozen Rectifier, a powerful tool imbued with the energy of the celestial lake. Let it lead you to ultimate knowledge and vanquish all obstacles in your path.",
             "type": "Rectifier",
             "rarity": 5,
             "stats": {
@@ -460,6 +471,7 @@
         },
         {
             "name": "Jinzhou Keeper",
+            "description": "A weapon designed to commemorate the Midnight Rangers' vigilant protection for Jinzhou. 'Cast your gaze towards the north, where the city's silhouette fades, its gates veiled by the tranquil rain.'",
             "type": "Rectifier",
             "rarity": 4,
             "stats": {
@@ -499,6 +511,7 @@
         },
         {
             "name": "Originite: Type V",
+            "description": "A rectifier model mass-produced in Huanglong. Codename: Chrono.",
             "type": "Rectifier",
             "rarity": 3,
             "stats": {
@@ -538,6 +551,7 @@
         },
         {
             "name": "Rectifier of Night",
+            "description": "May victory prevail the lasting night. In addition to the sworn oath of protection, this rectifier signifies the confidence of those fighting souls.",
             "type": "Rectifier",
             "rarity": 3,
             "stats": {
@@ -570,6 +584,7 @@
         },
         {
             "name": "Rectifier of Voyager",
+            "description": "The Rectifier provided by the Pioneer Association for the explorers, with bright colors, not easy to lose, hard texture, can cope with various extreme environments for a long time, is very popular among the explorers.",
             "type": "Rectifier",
             "rarity": 3,
             "stats": {
@@ -609,6 +624,7 @@
         },
         {
             "name": "Rectifier#25",
+            "description": "Improved version of a Rectifier prototype from the Huanglong next-gen mass production weaponry project. With surging power and highly purified lens, its sound is only played by the wise of steel-like will.",
             "type": "Rectifier",
             "rarity": 4,
             "stats": {
@@ -676,6 +692,7 @@
         },
         {
             "name": "Variation",
+            "description": "A descending adagio. This rectifier opens up an insightful window into the situation, changing the tune of the intense battle concerto.",
             "type": "Rectifier",
             "rarity": 4,
             "stats": {
@@ -715,6 +732,7 @@
         },
         {
             "name": "Stringmaster",
+            "description": "As the puppet palm unfurls, deadly strings are unleashed with a menacing hum. The air crackles with power, immobilizing any foes caught in its grasp. The rapid bolts of electricity leave unhealable scars on their victims.",
             "type": "Rectifier",
             "rarity": 5,
             "stats": {
@@ -768,6 +786,7 @@
         },
         {
             "name": "Training Rectifier",
+            "description": "This rectifier is designed specifically for training and teaching, offering only the basic features.",
             "type": "Rectifier",
             "rarity": 1,
             "stats": {
@@ -793,6 +812,7 @@
         },
         {
             "name": "Tyro Rectifier",
+            "description": "The origin of universal genesis. A Rectifier designed for novice Resonators. Contains a power not to be underestimated under its simple outlook.",
             "type": "Rectifier",
             "rarity": 2,
             "stats": {

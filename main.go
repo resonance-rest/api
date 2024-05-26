@@ -34,10 +34,11 @@ type Emojis struct {
 }
 
 type Weapon struct {
-	Name   string `json:"name"`
-	Type   string `json:"type"`
-	Rarity int    `json:"rarity"`
-	Stats  struct {
+	Name        string `json:"name"`
+	Description string `json:"description"`
+	Type        string `json:"type"`
+	Rarity      int    `json:"rarity"`
+	Stats       struct {
 		Attack  int `json:"atk"`
 		Substat struct {
 			SubName  string `json:"name"`
