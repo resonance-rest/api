@@ -37,7 +37,14 @@ type Weapon struct {
 	Name   string `json:"name"`
 	Type   string `json:"type"`
 	Rarity int    `json:"rarity"`
-	Skill  struct {
+	Stats  struct {
+		Attack  int `json:"atk"`
+		Substat struct {
+			SubName  string `json:"name"`
+			SubValue string `json:"value"`
+		} `json:"substat"`
+	} `json:"stats"`
+	Skill struct {
 		Name        string `json:"name"`
 		Description string `json:"description"`
 		Ranks       []struct {
@@ -55,7 +62,7 @@ var cdnURL = "http://cdn.resonance.rest/"
 
 func main() {
 	r := gin.Default()
-	r.Use(middleware())
+	r.Use(Middleware())
 	r.Use(rateLimitMiddleware())
 
 	characters, err := charactersLoad("data/characters.json")
@@ -93,6 +100,9 @@ func main() {
 		c.JSON(http.StatusNotFound, gin.H{"message": "Page not found", "docs": docsURL})
 	})
 
+	r.GET("/codes", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{"codes": []string{"WUTHERINGGIFT"}})
+	})
 	// EMOJIS
 
 	r.GET("/characters/:name/emojis", func(c *gin.Context) {
@@ -321,7 +331,7 @@ func main() {
 	r.Run(":8080")
 }
 
-func middleware() gin.HandlerFunc {
+func Middleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		c.Request.URL.Path = strings.ToLower(c.Request.URL.Path)
 		c.Next()
@@ -413,10 +423,8 @@ func rateLimitMiddleware() gin.HandlerFunc {
 		mutex.Lock()
 		defer mutex.Unlock()
 
-		// Increment the request count for the IP address
 		requestCount[ip]++
 
-		// Check if the request count exceeds the rate limit
 		if requestCount[ip] > rateLimit {
 			c.JSON(http.StatusTooManyRequests, gin.H{
 				"error": "Rate limit exceeded",
@@ -425,7 +433,6 @@ func rateLimitMiddleware() gin.HandlerFunc {
 			return
 		}
 
-		// Reset the request count every minute
 		go func() {
 			time.Sleep(time.Minute)
 			mutex.Lock()
@@ -433,7 +440,6 @@ func rateLimitMiddleware() gin.HandlerFunc {
 			requestCount[ip] = 0
 		}()
 
-		// Continue processing the request
 		c.Next()
 	}
 }

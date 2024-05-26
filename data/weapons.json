@@ -4,9 +4,16 @@
             "name": "Abyss Surges",
             "type": "Gauntlets",
             "rarity": 5,
+            "stats": {
+                "atk": 47,
+                "substat": {
+                    "name": "ATK",
+                    "value": "8.1%"
+                }
+            },
             "skill": {
                 "name": "Stormy Resolution",
-                "description": "Energy Regen is increased by {0}. When Resonance Skill hits a target, Basic Attack Damage is increased by {1}. When Basic Attack hits a target, Resonance Skill Damage is increased by {3} and lasts for {4}s.",
+                "description": "Energy Regen is increased by {0}. When Resonance Skill hits a target, Basic ATK Damage is increased by {1}. When Basic atk hits a target, Resonance Skill Damage is increased by {3} and lasts for {4}s.",
                 "ranks": [
                     {
                         "0": "12.8%",
@@ -50,9 +57,16 @@
             "name": "Amity Accord",
             "type": "Gauntlets",
             "rarity": 4,
+            "stats": {
+                "atk": 27,
+                "substat": {
+                    "name": "DEF",
+                    "value": "13.7%"
+                }
+            },
             "skill": {
                 "name": "Camaraderie",
-                "description": "When Intro Skill is released, increases Resonance Liberation DMG Bonus by {0}, lasting for {1} seconds.",
+                "description": "When Intro Skill is released, increases Resonance Liberation DMG Bonus by {0}, lasting for {1}s.",
                 "ranks": [
                     {
                         "0": "20%",
@@ -75,9 +89,16 @@
             "name": "Gauntlets of Night",
             "type": "Gauntlets",
             "rarity": 3,
+            "stats": {
+                "atk": 26,
+                "substat": {
+                    "name": "ATK",
+                    "value": "5.4%"
+                }
+            },
             "skill": {
                 "name": "Assemble",
-                "description": "Gains 3 stacks of Armor after releasing Resonance Liberation. Each stack increases attack and DEF by {0}, up to 3 stacks. Loses 1 stack when receiving DMG.",
+                "description": "Gains 3 stacks of Armor after releasing Resonance Liberation. Each stack increases ATK and DEF by {0}, up to 3 stacks. Loses 1 stack when receiving DMG.",
                 "ranks": [
                     {
                         "0": "10%",
@@ -92,9 +113,16 @@
             "name": "Gauntlets of Voyager",
             "type": "Gauntlets",
             "rarity": 3,
+            "stats": {
+                "atk": 26,
+                "substat": {
+                    "name": "DEF",
+                    "value": "6.8%"
+                }
+            },
             "skill": {
                 "name": "Crusade",
-                "description": "When using the Resonance Skill, it restores {0} points of Resonance Energy, and can be triggered {2} times every {1} seconds.",
+                "description": "When using the Resonance Skill, it restores {0} points of Resonance Energy, and can be triggered {2} times every {1}s.",
                 "ranks": [
                     {
                         "0": "8",
@@ -124,9 +152,16 @@
             "name": "Gauntlets#21D",
             "type": "Gauntlets",
             "rarity": 4,
+            "stats": {
+                "atk": 31,
+                "substat": {
+                    "name": "Energy Regen",
+                    "value": "8.64%"
+                }
+            },
             "skill": {
                 "name": "Mastermind",
-                "description": "When Dodging or Dashing, the attack increases by {0}, the damage caused by the Dodge counterattack increases by {1}, and lasts for {2} seconds. When the Dodge counterattack hits the target, it restores {3} health to the Character, and can be triggered {5} times every {4} seconds.",
+                "description": "When Dodging or Dashing, the ATK increases by {0}, the damage caused by the Dodge counter attack increases by {1}, and lasts for {2}s. When the Dodge counter attack hits the target, it restores {3} health to the Character, and can be triggered {5} times every {4}s.",
                 "ranks": [
                     {
                         "0": "8%",
@@ -178,6 +213,13 @@
             "name": "Guardian Gauntlets",
             "type": "Gauntlets",
             "rarity": 3,
+            "stats": {
+                "atk": 24,
+                "substat": {
+                    "name": "DEF",
+                    "value": "8.6%"
+                }
+            },
             "skill": {
                 "name": "Collective Strength",
                 "description": "The damage of Resonance Liberation increases by {0}.",
@@ -196,9 +238,16 @@
             "name": "Stonard",
             "type": "Gauntlets",
             "rarity": 4,
+            "stats": {
+                "atk": 33,
+                "substat": {
+                    "name": "Crit Rate",
+                    "value": "4.5%"
+                }
+            },
             "skill": {
                 "name": "",
-                "description": "After casting the Resonance Skill, the damage of your own Resonance Liberation increases by {0}, and the effect lasts for {1} seconds.",
+                "description": "After casting the Resonance Skill, the damage of your own Resonance Liberation increases by {0}, and the effect lasts for {1}s.",
                 "ranks": [
                     {
                         "0": "18%",
@@ -221,9 +270,16 @@
             "name": "Training Gauntlets",
             "type": "Gauntlets",
             "rarity": 1,
+            "stats": {
+                "atk": 20,
+                "substat": {
+                    "name": "ATK",
+                    "value": "2.5%"
+                }
+            },
             "skill": {
                 "name": "Perserve",
-                "description": "Increase attack by {0}.",
+                "description": "Increase ATK by {0}.",
                 "ranks": [
                     {
                         "0": "4%",
@@ -239,9 +295,16 @@
             "name": "Tyro Gauntlets",
             "type": "Gauntlets",
             "rarity": 2,
+            "stats": {
+                "atk": 22,
+                "substat": {
+                    "name": "ATK",
+                    "value": "3.3%"
+                }
+            },
             "skill": {
                 "name": "Prologue",
-                "description": "Increase attack by {0}.",
+                "description": "Increase ATK by {0}.",
                 "ranks": [
                     {
                         "0": "5%",
@@ -258,67 +321,500 @@
         {
             "name": "Augment",
             "type": "Rectifier",
-            "rarity": 4
+            "rarity": 4,
+            "stats": {
+                "atk": 33,
+                "substat": {
+                    "name": "Crit Rate",
+                    "value": "4.5%"
+                }
+            },
+            "skill": {
+                "name": "Forgiving Resilience",
+                "description": "When Resonance Liberation is released, increases the caster's ATK by {0}, lasting for {1}s.",
+                "ranks": [
+                    {
+                        "0": "15%",
+                        "1": "23.25%",
+                        "3": "31.5%",
+                        "4": "39.75%",
+                        "5": "48%"
+                    },
+                    {
+                        "0": "15",
+                        "1": "15",
+                        "3": "15",
+                        "4": "15",
+                        "5": "15"
+                    }
+                ]
+            }
         },
         {
             "name": "Comet Flare",
             "type": "Rectifier",
-            "rarity": 4
+            "rarity": 4,
+            "stats": {
+                "atk": 33,
+                "substat": {
+                    "name": "HP",
+                    "value": "6.8%"
+                }
+            },
+            "skill": {
+                "name": "Luminous Protection",
+                "description": "hen hitting a target with Basic ATKs or Heavy ATKs, increases Healing Bonus by {0}, stacking up to {2} time(s). This effect lasts for {1}s and can be triggered {4} time(s) every {3}s.",
+                "ranks": [
+                    {
+                        "0": "3%",
+                        "1": "3.5%",
+                        "3": "4%",
+                        "4": "4.5%",
+                        "5": "5%"
+                    },
+                    {
+                        "0": "8",
+                        "1": "8",
+                        "3": "8",
+                        "4": "8",
+                        "5": "8"
+                    },
+                    {
+                        "0": "3",
+                        "1": "3",
+                        "3": "3",
+                        "4": "3",
+                        "5": "3"
+                    },
+                    {
+                        "0": "0.6",
+                        "1": "0.6",
+                        "3": "0.6",
+                        "4": "0.6",
+                        "5": "0.6"
+                    },
+                    {
+                        "0": "1",
+                        "1": "1",
+                        "3": "1",
+                        "4": "1",
+                        "5": "1"
+                    }
+
+                ]
+            }
         },
         {
             "name": "Cosmic Ripples",
             "type": "Rectifier",
-            "rarity": 5
-        },
-        {
-            "name": "Discord",
-            "type": "Rectifier",
-            "rarity": 4
+            "rarity": 5,
+            "stats": {
+                "atk": 40,
+                "substat": {
+                    "name": "ATK",
+                    "value": "12%"
+                }
+            },
+            "skill": {
+                "name": "Luminous Protection",
+                "description": "When hitting a target with Basic ATKs or Heavy atks, increases Healing Bonus by {0}, stacking up to {2} time(s). This effect lasts for {1}s and can be triggered {4} time(s) every {3}s.",
+                "ranks": [
+                    {
+                        "0": "3%",
+                        "1": "3.5%",
+                        "3": "4%",
+                        "4": "4.5%",
+                        "5": "5%"
+                    },
+                    {
+                        "0": "8",
+                        "1": "8",
+                        "3": "8",
+                        "4": "8",
+                        "5": "8"
+                    },
+                    {
+                        "0": "3",
+                        "1": "3",
+                        "3": "3",
+                        "4": "3",
+                        "5": "3"
+                    },
+                    {
+                        "0": "0.6",
+                        "1": "0.6",
+                        "3": "0.6",
+                        "4": "0.6",
+                        "5": "0.6"
+                    },
+                    {
+                        "0": "1",
+                        "1": "1",
+                        "3": "1",
+                        "4": "1",
+                        "5": "1"
+                    }
+
+                ]
+            }
         },
         {
             "name": "Jinzhou Keeper",
             "type": "Rectifier",
-            "rarity": 4
+            "rarity": 4,
+            "stats": {
+                "atk": 31,
+                "substat": {
+                    "name": "ATK",
+                    "value": "8.1%"
+                }
+            },
+            "skill": {
+                "name": "Guardian",
+                "description": "When Intro Skill is released, increases the caster's ATK by {0} and HP by {1}, lasting for {2}s.",
+                "ranks": [
+                    {
+                        "0": "8%",
+                        "1": "10%",
+                        "3": "12%",
+                        "4": "14%",
+                        "5": "16%"
+                    },
+                    {
+                        "0": "10%",
+                        "1": "12.5%",
+                        "3": "15%",
+                        "4": "17.5%",
+                        "5": "20%"
+                    },
+                    {
+                        "0": "15",
+                        "1": "15",
+                        "3": "15",
+                        "4": "15",
+                        "5": "15"
+                    }
+                ]
+            }
         },
         {
             "name": "Originite: Type V",
             "type": "Rectifier",
-            "rarity": 3
+            "rarity": 3,
+            "stats": {
+                "atk": 24,
+                "substat": {
+                    "name": "HP",
+                    "value": "6.75%"
+                }
+            },
+            "skill": {
+                "name": "Augment",
+                "description": "When Intro Skill is released, restores HP by {0}. This effect can be triggered {2} time(s) every {1}s.",
+                "ranks": [
+                    {
+                        "0": "5%",
+                        "1": "6.25%",
+                        "3": "7.5%",
+                        "4": "8.75%",
+                        "5": "10%"
+                    },
+                    {
+                        "0": "20",
+                        "1": "20",
+                        "3": "20",
+                        "4": "20",
+                        "5": "20"
+                    },
+                    {
+                        "0": "1",
+                        "1": "1",
+                        "3": "1",
+                        "4": "1",
+                        "5": "1"
+                    }
+                ]
+            }
         },
         {
             "name": "Rectifier of Night",
             "type": "Rectifier",
-            "rarity": 3
+            "rarity": 3,
+            "stats": {
+                "atk": 26,
+                "substat": {
+                    "name": "ATK",
+                    "value": "5.4%"
+                }
+            },
+            "skill": {
+                "name": "Valiance",
+                "description": "When Intro Skill is released, increases ATK by {0}, lasting for {1}s.",
+                "ranks": [
+                    {
+                        "0": "8%",
+                        "1": "10%",
+                        "3": "12%",
+                        "4": "14%",
+                        "5": "16%"
+                    },
+                    {
+                        "0": "10",
+                        "1": "10",
+                        "3": "10",
+                        "4": "10",
+                        "5": "10"
+                    }
+                ]
+            }
         },
         {
             "name": "Rectifier of Voyager",
             "type": "Rectifier",
-            "rarity": 3
+            "rarity": 3,
+            "stats": {
+                "atk": 24,
+                "substat": {
+                    "name": "Energy Regen",
+                    "value": "7.2%"
+                }
+            },
+            "skill": {
+                "name": "Crusade",
+                "description": "When Resonance Skill is released, restores Resonance Energy by {0}. This effect can be triggered {2} time(s) every {1}s.",
+                "ranks": [
+                    {
+                        "0": "8",
+                        "1": "9",
+                        "3": "10",
+                        "4": "11",
+                        "5": "12"
+                    },
+                    {
+                        "0": "20",
+                        "1": "20",
+                        "3": "20",
+                        "4": "20",
+                        "5": "20"
+                    },
+                    {
+                        "0": "1",
+                        "1": "1",
+                        "3": "1",
+                        "4": "1",
+                        "5": "1"
+                    }
+                ]
+            }
         },
         {
             "name": "Rectifier#25",
             "type": "Rectifier",
-            "rarity": 4
+            "rarity": 4,
+            "stats": {
+                "atk": 27,
+                "substat": {
+                    "name": "Energy Regen",
+                    "value": "11.52%"
+                }
+            },
+            "skill": {
+                "name": "Dawnbringer",
+                "description": "When Resonance Skill is released, if the Resonator's HP is below {0}, restores their HP by {1}. This effect can be triggered {3} time(s) every {2}s; if the Resonator's HP is above {4}, increases ATK by {5}, lasting for {6}s.",
+                "ranks": [
+                    {
+                        "0": "60%",
+                        "1": "60%",
+                        "3": "60%",
+                        "4": "60%",
+                        "5": "60%"
+                    },
+                    {
+                        "0": "5%",
+                        "1": "6.25%",
+                        "3": "7.5%",
+                        "4": "8.75%",
+                        "5": "10%"
+                    },
+                    {
+                        "0": "8",
+                        "1": "8",
+                        "3": "8",
+                        "4": "8",
+                        "5": "8"
+                    },
+                    {
+                        "0": "1",
+                        "1": "1",
+                        "3": "1",
+                        "4": "1",
+                        "5": "1"
+                    },
+                    {
+                        "0": "60%",
+                        "1": "60%",
+                        "3": "60%",
+                        "4": "60%",
+                        "5": "60%"
+                    },
+                    {
+                        "0": "12%",
+                        "1": "15%",
+                        "3": "18%",
+                        "4": "21%",
+                        "5": "24%"
+                    },
+                    {
+                        "0": "10",
+                        "1": "10",
+                        "3": "10",
+                        "4": "10",
+                        "5": "10"
+                    }
+                ]
+            }
         },
         {
             "name": "Variation",
             "type": "Rectifier",
-            "rarity": 4
+            "rarity": 4,
+            "stats": {
+                "atk": 27,
+                "substat": {
+                    "name": "Energy Regen",
+                    "value": "11.52%"
+                }
+            },
+            "skill": {
+                "name": "Ceaseless Aria",
+                "description": "When Resonance Skill is released, restores Concerto Energy by {0}. This effect can be triggered 1 time every {1}s.",
+                "ranks": [
+                    {
+                        "0": "8",
+                        "1": "10",
+                        "3": "12",
+                        "4": "14",
+                        "5": "16"
+                    },
+                    {
+                        "0": "20",
+                        "1": "20",
+                        "3": "20",
+                        "4": "20",
+                        "5": "20"
+                    },
+                    {
+                        "0": "1",
+                        "1": "1",
+                        "3": "1",
+                        "4": "1",
+                        "5": "1"
+                    }
+                ]
+            }
         },
         {
             "name": "Stringmaster",
             "type": "Rectifier",
-            "rarity": 5
+            "rarity": 5,
+            "stats": {
+                "atk": 40,
+                "substat": {
+                    "name": "Crit Rate",
+                    "value": "8%"
+                }
+            },
+            "skill": {
+                "name": "Electric Amplification",
+                "description": "Increases the DMG Bonus of all Resonance Attributes by {0}. When Resonance Skill hits a target, increases ATK by {1}, stacking up to {2}. When the equipped character is not on the field, increases their ATK by an additional {4}.",
+                "ranks": [
+                    {
+                        "0": "12%",
+                        "1": "15%",
+                        "3": "18%",
+                        "4": "21%",
+                        "5": "24%"
+                    },
+                    {
+                        "0": "12%",
+                        "1": "15%",
+                        "3": "18%",
+                        "4": "21%",
+                        "5": "24%"
+                    },
+                    {
+                        "0": "2",
+                        "1": "2",
+                        "3": "2",
+                        "4": "2",
+                        "5": "2"
+                    },
+                    {
+                        "0": "5",
+                        "1": "5",
+                        "3": "5",
+                        "4": "5",
+                        "5": "5"
+                    },
+                    {
+                        "0": "12%",
+                        "1": "15%",
+                        "3": "18%",
+                        "4": "21%",
+                        "5": "24%"
+                    }
+                ]
+            }
         },
         {
             "name": "Training Rectifier",
             "type": "Rectifier",
-            "rarity": 1
+            "rarity": 1,
+            "stats": {
+                "atk": 20,
+                "substat": {
+                    "name": "ATK",
+                    "value": "2.55%"
+                }
+            },
+            "skill": {
+                "name": "Persevere",
+                "description": "Increases ATK by {0}.",
+                "ranks": [
+                    {
+                        "0": "4%",
+                        "1": "5%",
+                        "3": "6%",
+                        "4": "7%",
+                        "5": "8%"
+                    }
+                ]
+            }
         },
         {
             "name": "Tyro Rectifier",
             "type": "Rectifier",
-            "rarity": 2
+            "rarity": 2,
+            "stats": {
+                "atk": 22,
+                "substat": {
+                    "name": "ATK",
+                    "value": "3.3%"
+                }
+            },
+            "skill": {
+                "name": "Persevere",
+                "description": "Increases ATK by {0}.",
+                "ranks": [
+                    {
+                        "0": "5%",
+                        "1": "6.25%",
+                        "3": "7.5%",
+                        "4": "8.75%",
+                        "5": "10%"
+                    }
+                ]
+            }
         }
     ],
     "Broadblade": [
