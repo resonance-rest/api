@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"log"
 	"net/http"
 	"os"
 	"strings"
@@ -68,11 +67,22 @@ func main() {
 		return
 	}
 
+	weapons, err := loadWeapons("data/weapons.json")
+	if err != nil {
+		fmt.Println("Error loading weapons:", err)
+		return
+	}
+
+	totalWeapons := 0
+	for _, weaponList := range weapons {
+		totalWeapons += len(weaponList)
+	}
+
 	r.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"version":    "1.0",
 			"docs":       docsURL,
-			"statistics": gin.H{"attributes": len(attributes), "characters": len(characters)},
+			"statistics": gin.H{"attributes": len(attributes), "characters": len(characters), "weapons": totalWeapons},
 		})
 	})
 
@@ -219,11 +229,6 @@ func main() {
 	}
 
 	// WEAPONS
-
-	weapons, err := loadWeapons("data/weapons.json")
-	if err != nil {
-		log.Fatalf("Error loading weapons: %v", err)
-	}
 
 	r.GET("/weapons", func(c *gin.Context) {
 		var weaponTypes []string
