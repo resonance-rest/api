@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"os"
 	"strings"
@@ -29,6 +30,23 @@ type Attribute struct {
 
 type Emojis struct {
 	Emojis []string `json:"emojis"`
+}
+
+type Weapon struct {
+	Name   string `json:"name"`
+	Type   string `json:"type"`
+	Rarity int    `json:"rarity"`
+	Skill  struct {
+		Name        string `json:"name"`
+		Description string `json:"description"`
+		Ranks       []struct {
+			Zero  string `json:"0"`
+			One   string `json:"1"`
+			Three string `json:"3"`
+			Four  string `json:"4"`
+			Five  string `json:"5"`
+		} `json:"ranks"`
+	} `json:"skill,omitempty"`
 }
 
 var docsURL = "https://github.com/whosneksio/resonance.rest/blob/main/README.md"
@@ -78,10 +96,7 @@ func main() {
 		name := c.Param("name")
 		index := c.Param("index")
 
-		// Construct the URL for the emoji
 		emojiURL := fmt.Sprintf("%semojis/%s/%s.png", cdnURL, name, index)
-
-		// Fetch the remote file
 		resp, err := http.Get(emojiURL)
 		if err != nil {
 			c.JSON(http.StatusNotFound, gin.H{"error": "Failed to fetch emoji"})
@@ -89,16 +104,13 @@ func main() {
 		}
 		defer resp.Body.Close()
 
-		// Check if response status code is OK
 		if resp.StatusCode != http.StatusOK {
 			c.JSON(resp.StatusCode, gin.H{"error": "Failed to fetch emoji"})
 			return
 		}
 
-		// Set content type
 		c.Header("Content-Type", "image/png")
 
-		// Serve the remote file content as response
 		_, err = io.Copy(c.Writer, resp.Body)
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to serve emoji"})
@@ -206,6 +218,98 @@ func main() {
 		})
 	}
 
+	// WEAPONS
+
+	weapons, err := loadWeapons("data/weapons.json")
+	if err != nil {
+		log.Fatalf("Error loading weapons: %v", err)
+	}
+
+	r.GET("/weapons", func(c *gin.Context) {
+		var weaponTypes []string
+		for weaponType := range weapons {
+			weaponTypes = append(weaponTypes, weaponType)
+		}
+		c.JSON(http.StatusOK, gin.H{"types": weaponTypes})
+	})
+
+	r.GET("/weapons/:type", func(c *gin.Context) {
+		weaponType := strings.ToLower(c.Param("type"))
+
+		weaponsOfType, ok := weapons[weaponType]
+		if !ok {
+			weaponType = strings.Title(weaponType)
+			weaponsOfType, ok = weapons[weaponType]
+			if !ok {
+				c.JSON(http.StatusNotFound, gin.H{"error": "Weapon type not found", "docs": docsURL})
+				return
+			}
+		}
+
+		var weaponNames []string
+		for _, weapon := range weaponsOfType {
+			weaponNames = append(weaponNames, weapon.Name)
+		}
+
+		c.JSON(http.StatusOK, gin.H{"weapons": weaponNames})
+	})
+
+	r.GET("/weapons/:type/:name", func(c *gin.Context) {
+		weaponType := strings.ToLower(c.Param("type"))
+		weaponName := strings.ToLower(strings.ReplaceAll(c.Param("name"), "_", " "))
+
+		var foundWeapon *Weapon
+		weaponsOfType, ok := weapons[weaponType]
+		if !ok {
+			weaponType = strings.Title(weaponType)
+			weaponsOfType, ok = weapons[weaponType]
+			if !ok {
+				c.JSON(http.StatusNotFound, gin.H{"error": "Weapon type not found", "docs": docsURL})
+				return
+			}
+		}
+
+		for _, w := range weaponsOfType {
+			if strings.EqualFold(w.Name, weaponName) {
+				foundWeapon = &w
+				break
+			}
+		}
+
+		if foundWeapon != nil {
+			c.JSON(http.StatusOK, foundWeapon)
+		} else {
+			c.JSON(http.StatusNotFound, gin.H{"error": "Weapon not found", "docs": docsURL})
+		}
+	})
+
+	r.GET("/weapons/:type/:name/icon", func(c *gin.Context) {
+		weaponType := strings.ToLower(c.Param("type"))
+		weaponName := strings.ToLower(strings.ReplaceAll(c.Param("name"), "_", " "))
+		weaponName = strings.ReplaceAll(weaponName, " ", "_")
+
+		remoteURL := fmt.Sprintf("%sweapons/%s/%s.png", cdnURL, weaponType, weaponName)
+		resp, err := http.Get(remoteURL)
+		if err != nil {
+			c.JSON(http.StatusNotFound, gin.H{"error": "Icon not found", "docs": docsURL})
+			return
+		}
+		defer resp.Body.Close()
+
+		if resp.StatusCode != http.StatusOK {
+			c.JSON(resp.StatusCode, gin.H{"error": "Failed to fetch icon from remote URL", "docs": docsURL})
+			return
+		}
+
+		c.Header("Content-Type", "image/png")
+
+		_, err = io.Copy(c.Writer, resp.Body)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to serve icon", "docs": docsURL})
+			return
+		}
+	})
+
 	r.Run(":8080")
 }
 
@@ -267,8 +371,23 @@ func emojisPerCharacter(name string, index string) (string, error) {
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
-		return "", fmt.Errorf("Failed to fetch emoji")
+		return "", fmt.Errorf("failed to fetch emoji")
 	}
 
 	return emojiURL, nil
+}
+
+func loadWeapons(filename string) (map[string][]Weapon, error) {
+	file, err := os.Open(filename)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+
+	var weapons map[string][]Weapon
+	if err := json.NewDecoder(file).Decode(&weapons); err != nil {
+		return nil, err
+	}
+
+	return weapons, nil
 }

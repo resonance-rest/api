@@ -81,13 +81,54 @@
 | :-------- | :------- | :----------------------------------- |
 | `name`    | `string` | **Required** · name of a attribute   |
 
-#### Get a attribute's image
+#### Get a attribute's icon
 
 ```http
-  GET https://api.resonance.rest/attributes/:name/:type
+  GET https://api.resonance.rest/attributes/:name/icon
 ```
 
 | Parameter | Type     | Description                          |
 | :-------- | :------- | :----------------------------------- |
-| `name`    | `string` | **Required** · name of a character   |
-| `type`    | `string` | **Required** · `icon`                |
+| `name`    | `string` | **Required** · name of a attribute   |
+
+## Weapons
+
+#### Get weapon list
+
+```http
+  GET https://api.resonance.rest/weapons
+```
+
+#### Get weapons in type
+
+```http
+  GET https://api.resonance.rest/weapons/:type
+```
+
+| Parameter | Type     | Description                          |
+| :-------- | :------- | :----------------------------------- |
+| `type`    | `string` | **Required** · type of a weapon      |
+
+#### Get a weapons's data
+
+```http
+  GET https://api.resonance.rest/weapons/:type:/:name
+```
+
+| Parameter | Type     | Description                          |
+| :-------- | :------- | :----------------------------------- |
+| `type`    | `string` | **Required** · type of a weapon      |
+| `name`    | `string` | **Required** · name of a weapon      |
+
+#### Get a weapons's image
+
+```http
+  GET https://api.resonance.rest/weapons/:type:/:name/icon
+```
+
+| Parameter | Type     | Description                          |
+| :-------- | :------- | :----------------------------------- |
+| `type`    | `string` | **Required** · type of a weapon      |
+| `name`    | `string` | **Required** · name of a weapon      |
+
+

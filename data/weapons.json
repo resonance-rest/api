@@ -1,0 +1,568 @@
+{
+    "Gauntlets": [
+        {
+            "name": "Abyss Surges",
+            "type": "Gauntlets",
+            "rarity": 5,
+            "skill": {
+                "name": "Stormy Resolution",
+                "description": "Energy Regen is increased by {0}. When Resonance Skill hits a target, Basic Attack Damage is increased by {1}. When Basic Attack hits a target, Resonance Skill Damage is increased by {3} and lasts for {4}s.",
+                "ranks": [
+                    {
+                        "0": "12.8%",
+                        "1": "16%",
+                        "3": "19.2%",
+                        "4": "22.4%",
+                        "5": "25.6%"
+                    },
+                    {
+                        "0": "10%",
+                        "1": "12.5%",
+                        "3": "15%",
+                        "4": "17.5%",
+                        "5": "20%"
+                    },
+                    {
+                        "0": "8",
+                        "1": "8",
+                        "3": "8",
+                        "4": "8",
+                        "5": "8"
+                    },
+                    {
+                        "0": "10%",
+                        "1": "12.5%",
+                        "3": "15%",
+                        "4": "17.5%",
+                        "5": "20%"
+                    },
+                    {
+                        "0": "8",
+                        "1": "8",
+                        "3": "8",
+                        "4": "8",
+                        "5": "8"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Amity Accord",
+            "type": "Gauntlets",
+            "rarity": 4,
+            "skill": {
+                "name": "Camaraderie",
+                "description": "When Intro Skill is released, increases Resonance Liberation DMG Bonus by {0}, lasting for {1} seconds.",
+                "ranks": [
+                    {
+                        "0": "20%",
+                        "1": "25%",
+                        "3": "30%",
+                        "4": "35%",
+                        "5": "40%"
+                    },
+                    {
+                        "0": "15",
+                        "1": "15",
+                        "3": "15",
+                        "4": "15",
+                        "5": "15"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Gauntlets of Night",
+            "type": "Gauntlets",
+            "rarity": 3,
+            "skill": {
+                "name": "Assemble",
+                "description": "Gains 3 stacks of Armor after releasing Resonance Liberation. Each stack increases attack and DEF by {0}, up to 3 stacks. Loses 1 stack when receiving DMG.",
+                "ranks": [
+                    {
+                        "0": "10%",
+                        "1": "5%",
+                        "3": "10%",
+                        "4": "5"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Gauntlets of Voyager",
+            "type": "Gauntlets",
+            "rarity": 3,
+            "skill": {
+                "name": "Crusade",
+                "description": "When using the Resonance Skill, it restores {0} points of Resonance Energy, and can be triggered {2} times every {1} seconds.",
+                "ranks": [
+                    {
+                        "0": "8",
+                        "1": "9",
+                        "3": "10",
+                        "4": "11",
+                        "5": "12"
+                    },
+                    {
+                        "0": "20",
+                        "1": "20",
+                        "3": "20",
+                        "4": "20",
+                        "5": "20"
+                    },
+                    {
+                        "0": "1",
+                        "1": "1",
+                        "3": "1",
+                        "4": "1",
+                        "5": "1"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Gauntlets#21D",
+            "type": "Gauntlets",
+            "rarity": 4,
+            "skill": {
+                "name": "Mastermind",
+                "description": "When Dodging or Dashing, the attack increases by {0}, the damage caused by the Dodge counterattack increases by {1}, and lasts for {2} seconds. When the Dodge counterattack hits the target, it restores {3} health to the Character, and can be triggered {5} times every {4} seconds.",
+                "ranks": [
+                    {
+                        "0": "8%",
+                        "1": "10%",
+                        "3": "12%",
+                        "4": "14%",
+                        "5": "16%"
+                    },
+                    {
+                        "0": "50%",
+                        "1": "62.5%",
+                        "3": "75%",
+                        "4": "87.5%",
+                        "5": "100%"
+                    },
+                    {
+                        "0": "8",
+                        "2": "8",
+                        "3": "8",
+                        "4": "8",
+                        "5": "8"
+                    },
+                    {
+                        "0": "5%",
+                        "1": "6.25%",
+                        "3": "7.5%",
+                        "4": "8.75%",
+                        "5": "10%"
+                    },
+                    {
+                        "0": "6",
+                        "2": "6",
+                        "3": "6",
+                        "4": "6",
+                        "5": "6"
+                    },
+                    {
+                        "0": "1",
+                        "1": "1",
+                        "3": "1",
+                        "4": "1",
+                        "5": "1"
+                    }
+                    
+                ]
+            }
+        },
+        {
+            "name": "Guardian Gauntlets",
+            "type": "Gauntlets",
+            "rarity": 3,
+            "skill": {
+                "name": "Collective Strength",
+                "description": "The damage of Resonance Liberation increases by {0}.",
+                "ranks": [
+                    {
+                        "0": "12%",
+                        "1": "15%",
+                        "3": "18%",
+                        "4": "21%",
+                        "5": "24%"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Stonard",
+            "type": "Gauntlets",
+            "rarity": 4,
+            "skill": {
+                "name": "",
+                "description": "After casting the Resonance Skill, the damage of your own Resonance Liberation increases by {0}, and the effect lasts for {1} seconds.",
+                "ranks": [
+                    {
+                        "0": "18%",
+                        "1": "27%",
+                        "3": "36%",
+                        "4": "45%",
+                        "5": "54%"
+                    },
+                    {
+                        "0": "5",
+                        "1": "5",
+                        "3": "5",
+                        "4": "5",
+                        "5": "5"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Training Gauntlets",
+            "type": "Gauntlets",
+            "rarity": 1,
+            "skill": {
+                "name": "Perserve",
+                "description": "Increase attack by {0}.",
+                "ranks": [
+                    {
+                        "0": "4%",
+                        "1": "5%",
+                        "3": "6%",
+                        "4": "7%",
+                        "5": "8%"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Tyro Gauntlets",
+            "type": "Gauntlets",
+            "rarity": 2,
+            "skill": {
+                "name": "Prologue",
+                "description": "Increase attack by {0}.",
+                "ranks": [
+                    {
+                        "0": "5%",
+                        "1": "6.5%",
+                        "3": "7.5%",
+                        "4": "8.75%",
+                        "5": "10%"
+                    }
+                ]
+            }
+        }
+    ],
+    "Rectifier": [
+        {
+            "name": "Augment",
+            "type": "Rectifier",
+            "rarity": 4
+        },
+        {
+            "name": "Comet Flare",
+            "type": "Rectifier",
+            "rarity": 4
+        },
+        {
+            "name": "Cosmic Ripples",
+            "type": "Rectifier",
+            "rarity": 5
+        },
+        {
+            "name": "Discord",
+            "type": "Rectifier",
+            "rarity": 4
+        },
+        {
+            "name": "Jinzhou Keeper",
+            "type": "Rectifier",
+            "rarity": 4
+        },
+        {
+            "name": "Originite: Type V",
+            "type": "Rectifier",
+            "rarity": 3
+        },
+        {
+            "name": "Rectifier of Night",
+            "type": "Rectifier",
+            "rarity": 3
+        },
+        {
+            "name": "Rectifier of Voyager",
+            "type": "Rectifier",
+            "rarity": 3
+        },
+        {
+            "name": "Rectifier#25",
+            "type": "Rectifier",
+            "rarity": 4
+        },
+        {
+            "name": "Variation",
+            "type": "Rectifier",
+            "rarity": 4
+        },
+        {
+            "name": "Stringmaster",
+            "type": "Rectifier",
+            "rarity": 5
+        },
+        {
+            "name": "Training Rectifier",
+            "type": "Rectifier",
+            "rarity": 1
+        },
+        {
+            "name": "Tyro Rectifier",
+            "type": "Rectifier",
+            "rarity": 2
+        }
+    ],
+    "Broadblade": [
+        {
+            "name": "Autumntrace",
+            "type": "Broadblade",
+            "rarity": 4,
+            "url": "autumntrace",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010074_UI"
+        },
+        {
+            "name": "Broadblade of Night",
+            "type": "Broadblade",
+            "rarity": 3,
+            "url": "broadblade-of-night",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010013_UI"
+        },
+        {
+            "name": "Broadblade of Voyager",
+            "type": "Broadblade",
+            "rarity": 3,
+            "url": "broadblade-of-voyager",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010043_UI"
+        },
+        {
+            "name": "Broadblade#41",
+            "type": "Broadblade",
+            "rarity": 4,
+            "url": "broadblade-41",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010034_UI"
+        },
+        {
+            "name": "Dauntless Evernight",
+            "type": "Broadblade",
+            "rarity": 4,
+            "url": "dauntless-evernight",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010044_UI"
+        },
+        {
+            "name": "Discord",
+            "type": "Broadblade",
+            "rarity": 4,
+            "url": "discord",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010024_UI"
+        },
+        {
+            "name": "Guardian Broadblade",
+            "type": "Broadblade",
+            "rarity": 3,
+            "url": "guardian-broadblade",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010053_UI"
+        },
+        {
+            "name": "Helios Cleaver",
+            "type": "Broadblade",
+            "rarity": 4,
+            "url": "helios-cleaver",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010064_UI"
+        },
+        {
+            "name": "Lustrous Razor",
+            "type": "Broadblade",
+            "rarity": 5,
+            "url": "lustrous-razor",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010015_UI"
+        },
+        {
+            "name": "Scale: Slasher",
+            "type": "Broadblade",
+            "rarity": 4,
+            "url": "scale-slasher",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020024_UI"
+        },
+        {
+            "name": "Verdant Summit",
+            "type": "Broadblade",
+            "rarity": 5,
+            "url": "verdant-summit",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010016_UI"
+        },
+        {
+            "name": "Training Broadblade",
+            "type": "Broadblade",
+            "rarity": 1,
+            "url": "training-broadblade",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010011_UI"
+        },
+        {
+            "name": "Tyro Broadblade",
+            "type": "Broadblade",
+            "rarity": 2,
+            "url": "tyro-broadblade",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010012_UI"
+        }
+    ],
+    "Pistols": [
+        {
+            "name": "Cadenza",
+            "type": "Pistols",
+            "rarity": 4,
+            "url": "cadenza",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030024_UI"
+        },
+        {
+            "name": "Novaburst",
+            "type": "Pistols",
+            "rarity": 4,
+            "url": "novaburst",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030064_UI"
+        },
+        {
+            "name": "Pistols of Night",
+            "type": "Pistols",
+            "rarity": 3,
+            "url": "pistols-of-night",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030013_UI"
+        },
+        {
+            "name": "Pistols of Voyager",
+            "type": "Pistols",
+            "rarity": 3,
+            "url": "pistols-of-voyager",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030043_UI"
+        },
+        {
+            "name": "Pistols#26",
+            "type": "Pistols",
+            "rarity": 4,
+            "url": "pistols-26",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030034_UI"
+        },
+        {
+            "name": "Thunderbolt",
+            "type": "Pistols",
+            "rarity": 4,
+            "url": "thunderbolt",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030074_UI"
+        },
+        {
+            "name": "Undying Flame",
+            "type": "Pistols",
+            "rarity": 4,
+            "url": "undying-flame",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030044_UI"
+        },
+        {
+            "name": "Static Mist",
+            "type": "Pistols",
+            "rarity": 5,
+            "url": "static-mist",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030015_UI"
+        },
+        {
+            "name": "Originite: Type III",
+            "type": "Pistols",
+            "rarity": 3,
+            "url": "originite-type-iii",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030023_UI"
+        },
+        {
+            "name": "Training Pistols",
+            "type": "Pistols",
+            "rarity": 1,
+            "url": "training-pistols",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030011_UI"
+        },
+        {
+            "name": "Tyro Pistols",
+            "type": "Pistols",
+            "rarity": 2,
+            "url": "tyro-pistols",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030012_UI"
+        }
+    ],
+    "Sword": [
+        {
+            "name": "Commando of Conviction",
+            "type": "Sword",
+            "rarity": 4,
+            "url": "commando-of-conviction",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020044_UI"
+        },
+        {
+            "name": "Emerald of Genesis",
+            "type": "Sword",
+            "rarity": 5,
+            "url": "emerald-of-genesis",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020015_UI"
+        },
+        {
+            "name": "Lumingloss",
+            "type": "Sword",
+            "rarity": 4,
+            "url": "lumingloss",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020074_UI"
+        },
+        {
+            "name": "Lunar Cutter",
+            "type": "Sword",
+            "rarity": 4,
+            "url": "lunar-cutter",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020064_UI"
+        },
+        {
+            "name": "Originite: Type II",
+            "type": "Sword",
+            "rarity": 3,
+            "url": "originite-type-ii",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020023_UI"
+        },
+        {
+            "name": "Sword of Night",
+            "type": "Sword",
+            "rarity": 3,
+            "url": "sword-of-night",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020013_UI"
+        },
+        {
+            "name": "Sword of Voyager",
+            "type": "Sword",
+            "rarity": 3,
+            "url": "sword-of-voyager",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020043_UI"
+        },
+        {
+            "name": "Sword#18",
+            "type": "Sword",
+            "rarity": 4,
+            "url": "sword-18",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020034_UI"
+        },
+        {
+            "name": "Training Sword",
+            "type": "Sword",
+            "rarity": 1,
+            "url": "training-sword",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020011_UI"
+        },
+        {
+            "name": "Tyro Sword",
+            "type": "Sword",
+            "rarity": 2,
+            "url": "tyro-sword",
+            "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020012_UI"
+        }
+    ]
+}
