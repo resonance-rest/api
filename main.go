@@ -7,6 +7,8 @@ import (
 	"net/http"
 	"os"
 	"strings"
+	"sync"
+	"time"
 
 	"github.com/gin-gonic/gin"
 )
@@ -54,6 +56,7 @@ var cdnURL = "http://cdn.resonance.rest/"
 func main() {
 	r := gin.Default()
 	r.Use(middleware())
+	r.Use(rateLimitMiddleware())
 
 	characters, err := charactersLoad("data/characters.json")
 	if err != nil {
@@ -395,4 +398,42 @@ func loadWeapons(filename string) (map[string][]Weapon, error) {
 	}
 
 	return weapons, nil
+}
+
+var (
+	rateLimit    = 60
+	requestCount = make(map[string]int)
+	mutex        sync.Mutex
+)
+
+func rateLimitMiddleware() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		ip := c.ClientIP()
+
+		mutex.Lock()
+		defer mutex.Unlock()
+
+		// Increment the request count for the IP address
+		requestCount[ip]++
+
+		// Check if the request count exceeds the rate limit
+		if requestCount[ip] > rateLimit {
+			c.JSON(http.StatusTooManyRequests, gin.H{
+				"error": "Rate limit exceeded",
+			})
+			c.Abort()
+			return
+		}
+
+		// Reset the request count every minute
+		go func() {
+			time.Sleep(time.Minute)
+			mutex.Lock()
+			defer mutex.Unlock()
+			requestCount[ip] = 0
+		}()
+
+		// Continue processing the request
+		c.Next()
+	}
 }
