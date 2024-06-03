@@ -418,7 +418,7 @@ func loadWeapons(filename string) (map[string][]Weapon, error) {
 }
 
 var (
-	rateLimit    = 60
+	rateLimit    = 200
 	requestCount = make(map[string]int)
 	mutex        sync.Mutex
 )
