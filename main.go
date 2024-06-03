@@ -10,6 +10,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
@@ -64,6 +65,7 @@ var cdnURL = "http://cdn.resonance.rest/"
 func main() {
 	r := gin.Default()
 	r.Use(Middleware())
+	r.Use(cors.Default())
 	r.Use(rateLimitMiddleware())
 
 	characters, err := charactersLoad("data/characters.json")
