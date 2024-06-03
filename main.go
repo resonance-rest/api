@@ -64,9 +64,13 @@ var cdnURL = "http://cdn.resonance.rest/"
 
 func main() {
 	r := gin.Default()
+
 	r.Use(Middleware())
-	r.Use(cors.Default())
 	r.Use(rateLimitMiddleware())
+
+	config := cors.DefaultConfig()
+	config.AllowAllOrigins = true
+	r.Use(cors.New(config))
 
 	characters, err := charactersLoad("data/characters.json")
 	if err != nil {
