@@ -560,7 +560,7 @@
     "cost": 4,
     "sonataEffects": ["Sun-sinking Eclipse"],
     "outline": "Transform into Dreamless to continuously attack enemies and deal Havoc DMG. This Echo Skill deals more damage after Rover-Havoc casts their Resonance Liberation.",
-    "description": "Transform into Dreamless and perform 6 consecutive attacks. The first 5 attacks deal {0}% Havoc DMG each, and the last attack deal {1}% Havoc DMG. The DMG of this Echo Skill is increased by 50.00% during the first 5s after Rover-Havoc casts Resonance Liberation.",
+    "description": "Transform into Dreamless and perform 6 consecutive attacks. The first 5 attacks deal {0}% Havoc DMG each, and the last attack deal {1}% Havoc DMG. The DMG of this Echo Skill is increased by 50.00% during the first 5s after Rover-Havoc casts Resonance Liberation: Deadening Abyss.",
     "ranks": [
       { "2": 38.87, "3": 43.94, "4": 49.01, "5": 54.08 },
       { "2": 194.35, "3": 219.7, "4": 245.05, "5": 270.4 }
