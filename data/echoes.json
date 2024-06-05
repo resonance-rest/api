@@ -423,12 +423,148 @@
     "cooldown": "15s"
   },
   {
-    "name": "",
+    "name": "Bell-Borne Geochelone",
+    "class": "Calamity",
     "cost": 4,
-    "sonataEffects": [],
-    "outline": "",
-    "description": "",
-    "ranks": [],
+    "sonataEffects": ["Rejuvenating Glow", "Moonlit Clouds"],
+    "outline": "Activate the protection of Bell-Borne Geochelone, dealing Glacio DMG to nearby enemies based on current character's DEF. Reduce incoming damage, increase damage dealt.",
+    "description": "Activate the protection of Bell-Borne Geochelone. Deal Glacio DMG based on {0}% of the current character's DEF to nearby enemies, and obtain a Bell-Borne Shield that lasts for 15s. The Bell-Borne Shield provides 50.00% DMG Reduction and 10.0% DMG Boost for the current team members, and disappears after the current character is hit for 3 times.",
+    "ranks": [104.88, 118.56, 132.24, 145.92],
+    "cooldown": "20s"
+  },
+  {
+    "name": "Crownless",
+    "class": "Overlord",
+    "cost": 4,
+    "sonataEffects": ["Sun-sinking Eclipse"],
+    "outline": "Transform into Crownless and relentlessly assault enemies, dealing Havoc DMG. Increase current character's Havoc DMG and Resonance Skill DMG.",
+    "description": "Transform into Crownless and perform up to 4 consecutive attacks. The first 2 attacks deal {0}% Havoc DMG each, the 3rd attack deals {1}% Havoc DMG 2 times, and the 4th attack deals {2}% Havoc DMG 3 times. After the transformation, increase current character's Havoc DMG by 12.00% and Resonance Skill DMG by 12.00% for 15s.",
+    "ranks": [
+      { "2": 96.37, "3": 108.94, "4": 121.51, "5": 134.08 },
+      { "2": 72.28, "3": 81.71, "4": 91.13, "5": 100.56 },
+      { "2": 48.19, "3": 54.47, "4": 60.76, "5": 67.04 }
+    ],
+    "cooldown": "20s"
+  },
+  {
+    "name": "Feilian Beringal",
+    "class": "Overlord",
+    "cost": 4,
+    "sonataEffects": ["Sierra Gale"],
+    "outline": "Transform into Feilian Beringal to continuously attack enemies, dealing Aero DMG. Increase current character's Aero DMG and Heavy Attack DMG.",
+    "description": "Transform into Feilian Beringal to perform a powerful kick. If the kick lands on an enemy, immediately perform a follow up strike. The kick deals {0}% Aero DMG, and the follow-up strike deals {1}% Aero DMG. After the follow-up strike hits, the current character's Aero DMG increases by 12.00%, and the Heavy Attack DMG increases by 12.00% for 15s.",
+    "ranks": [
+      { "2": 166.64, "3": 188.37, "4": 210.11, "5": 231.84 },
+      { "2": 203.67, "3": 230.23, "4": 256.8, "5": 283.36 }
+    ],
+    "cooldown": "20s"
+  },
+  {
+    "name": "Impermanence Heron",
+    "class": "Overlord",
+    "cost": 4,
+    "sonataEffects": ["Moonlit Clouds"],
+    "outline": "Transform into Impermanence Heron to deal Havoc DMG. Long press to spit flames and continuously deal Havoc DMG. Once the attacks hit any enemy, restore current character's Resonance Energy. Increase next character's damage dealt.",
+    "description": "Transform into Impermanence Heron to fly up and smack down, dealing 223.22% Havoc DMG. Long press to stay as Impermanence Heron and continuously spit flames, each attack dealing 40.05% Havoc DMG. Once the initial attack lands on any enemy, the current character regains 10 Resonance Energy. If the current charact uses their Outro Skill within the next 15s, the next character's damage dealt will be boosted by 12% for 15s.",
+    "ranks": [
+      { "2": 223.22, "3": 252.33, "4": 281.45, "5": 310.56 },
+      { "2": 40.05, "3": 45.28, "4": 50.5, "5": 55.73 }
+    ],
+    "cooldown": "20s"
+  },
+  {
+    "name": "Inferno Rider",
+    "class": "Overlord",
+    "cost": 4,
+    "sonataEffects": ["Molten Rift"],
+    "outline": "Transform into Inferno Rider to perform consecutive strikes, dealing Fusion DMG. Increase current character's Fusion DMG and Basic Attack DMG. Long press Echo Skill to enter the Riding Mode.",
+    "description": "Transform into Inferno Rider to launch up to 3 consecutive slashes in a row, each slash dealing {0}%, {1}%, and {2}% Fusion DMG respectively. After the final hit, increase the current character's Fusion DMG by 12.00% and Basic Attack DMG by 12.00% for 15s. Long press the Echo Skill to transform into Inferno Rider and enter the Riding Mode. When exiting the Riding Mode, deal 12.00% Fusion DMG to enemies in front.",
+    "ranks": [
+      { "2": 174.23, "3": 196.95, "4": 219.68, "5": 242.4 },
+      { "2": 203.26, "3": 229.78, "4": 256.29, "5": 282.8 },
+      { "2": 203.26, "3": 229.78, "4": 256.29, "5": 282.8 }
+    ],
+    "cooldown": "20s"
+  },
+  {
+    "name": "Lampylumen Myriad",
+    "class": "Overlord",
+    "cost": 4,
+    "sonataEffects": ["Freezing Frost"],
+    "outline": "Transform into Lampylumen Myriad to continuously attack enemies, dealing Glacio damage. Increase current character's Glacio DMG and Resonance Skill DMG.",
+    "description": "Transform into Lampylumen Myriad. Perform up to 3 consecutive attacks. Unleash a freezing shock by performing consecutive forward strikes, with the initial two strikes inflicting {0}% and {1}% Glacio DMG respectively, and the final strike dealing {2}% Glacio DMG. Enemies will be frozen on hit. Each shock increases the current character's Glacio DMG by 4.00% and Resonance Skill DMG dealt by 4.00% for 15s, stacking up to 3 times. ",
+    "ranks": [
+      { "2": 143.87, "3": 162.63, "4": 181.4, "5": 220.16 },
+      { "2": 143.87, "3": 162.63, "4": 181.4, "5": 200.16 },
+      { "2": 191.82, "3": 216.84, "4": 241.86, "5": 266.88 }
+    ],
+    "cooldown": "20s"
+  },
+  {
+    "name": "Mech Abomination",
+    "class": "Overlord",
+    "cost": 4,
+    "sonataEffects": ["Lingering Tunes"],
+    "outline": "Deal Electro DMG to enemies nearby and create Mech Waste that explodes in a while. Increase current character's ATK.",
+    "description": "Strike the enemies in front, dealing {0}% Electro DMG. Summon Mech Waste to attack enemies. Mech Waste deals {1}% Electro DMG on-hit and explode after a while to deal {2}% Electro DMG. After casting this Echo Skill, increase current character's ATK by 12.00% for 15s. Damage dealt by Mech Waste is considered Outro Skill DMG.",
+    "ranks": [
+      { "2": 34.96, "3": 39.52, "4": 44.08, "5": 48.64 },
+      { "2": 230.0, "3": 260.0, "4": 290.0, "5": 320.0 },
+      { "2": 115.0, "3": 130.0, "4": 145.0, "5": 160.0 }
+    ],
     "cooldown": "15s"
+  },
+  {
+    "name": "Mourning Aix",
+    "class": "Overlord",
+    "cost": 4,
+    "sonataEffects": ["Celestial Light"],
+    "outline": "Transform into Mourning Aix to continuously attack enemies, dealing Spectro damage. Increase current character's Spectro DMG and Resonance Liberation DMG.",
+    "description": "Transform into Mourning Aix and perform 2 consecutive claw attacks, each attack dealing {0}% and {1}% Spectro DMG respectively. After the transformation, increase current character's Spectro DMG by 12.00% and Resonance Liberation DMG by 12.00% for 15s.",
+    "ranks": [
+      { "2": 113.16, "3": 127.92, "4": 142.68, "5": 157.44 },
+      { "2": 169.74, "3": 191.88, "4": 214.02, "5": 236.16 }
+    ],
+    "cooldown": "20s"
+  },
+  {
+    "name": "Tempest Mephis",
+    "class": "Overlord",
+    "cost": 4,
+    "sonataEffects": ["Void Thunder"],
+    "outline": "Transform into Tempest Mephis to continuously attack enemies, dealing Electro damage. Increase current character's Electro DMG & Heavy Attack DMG.",
+    "description": "Transform into Tempest Mephis to perform tail swing attacks followed by a claw attack. The lightning strike summoned by the tail swing deals {0}% Electro DMG each time, while the claw attack deals {1}% Electro DMG. After the claw hit, increase the current character's Electro DMG by 12.00% and Heavy Attack DMG by 12.00% for 15s.",
+    "ranks": [
+      { "2": 73.66, "3": 83.27, "4": 92.87, "5": 102.48 },
+      { "2": 126.27, "3": 142.74, "4": 159.21, "5": 175.68 }
+    ],
+    "cooldown": "20s"
+  },
+  {
+    "name": "Thundering Mephis",
+    "class": "Overlord",
+    "cost": 4,
+    "sonataEffects": ["Void Thunder"],
+    "outline": "Transform into Thundering Mephis to deal Electro DMG. Increase the current character's Electro DMG and Resonance Liberation DMG.",
+    "description": "Transform into Thundering Mephis, engaging in a rapid assault of up to 6 strikes. The first 5 strikes deal {0}% Electro DMG each, while the final strike inflicts {1}% Electro DMG, with an additional {2}% Electro DMG from the thunder. After the final hit, increase the current character's Electro DMG by 12.00% and Resonance Liberation DMG by 12.00% for 15s.",
+    "ranks": [
+      { "2": 95.31, "3": 107.74, "4": 120.18, "5": 132.61 },
+      { "2": 131.16, "3": 153.92, "4": 171.68, "5": 189.44 },
+      { "2": 22.69, "3": 25.65, "4": 28.61, "5": 31.57 }
+    ],
+    "cooldown": "20s"
+  },
+  {
+    "name": "Dreamless",
+    "class": "Calamity",
+    "cost": 4,
+    "sonataEffects": ["Sun-sinking Eclipse"],
+    "outline": "Transform into Dreamless to continuously attack enemies and deal Havoc DMG. This Echo Skill deals more damage after Rover-Havoc casts their Resonance Liberation.",
+    "description": "Transform into Dreamless and perform 6 consecutive attacks. The first 5 attacks deal {0}% Havoc DMG each, and the last attack deal {1}% Havoc DMG. The DMG of this Echo Skill is increased by 50.00% during the first 5s after Rover-Havoc casts Resonance Liberation.",
+    "ranks": [
+      { "2": 38.87, "3": 43.94, "4": 49.01, "5": 54.08 },
+      { "2": 194.35, "3": 219.7, "4": 245.05, "5": 270.4 }
+    ],
+    "cooldown": "20s"
   }
 ]
