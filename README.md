@@ -131,4 +131,70 @@
 | `type`    | `string` | **Required** · type of a weapon      |
 | `name`    | `string` | **Required** · name of a weapon      |
 
+## Echoes
+
+#### Get echoes list
+
+```http
+  GET https://api.resonance.rest/echoes
+```
+
+#### Get echo by name
+
+```http
+  GET https://api.resonance.rest/echoes/:name
+```
+
+| Parameter | Type     | Description                          |
+| :-------- | :------- | :----------------------------------- |
+| `name`    | `string` | **Required** · name of an echo       |
+
+#### Get sonata effects list
+
+```http
+  GET https://api.resonance.rest/echoes/sonatas
+```
+
+#### Get sonata effect
+
+```http
+  GET https://api.resonance.rest/echoes/sonatas/:name
+```
+
+| Parameter | Type     | Description                             |
+| :-------- | :------- | :-------------------------------------- |
+| `name`    | `string` | **Required** · name of an sonata effect |
+
+#### Get stats list
+
+```http
+  GET https://api.resonance.rest/echoes/stats
+```
+
+#### Get stat
+
+```http
+  GET https://api.resonance.rest/echoes/stats/:name
+```
+
+| Parameter | Type     | Description                             |
+| :-------- | :------- | :-------------------------------------- |
+| `name`    | `string` | **Required** · name of an substat       |
+
+#### Get substats list
+
+```http
+  GET https://api.resonance.rest/echoes/substats
+```
+
+#### Get substat
+
+```http
+  GET https://api.resonance.rest/echoes/substats/:name
+```
+
+| Parameter | Type     | Description                             |
+| :-------- | :------- | :-------------------------------------- |
+| `name`    | `string` | **Required** · name of an substat       |
+
 

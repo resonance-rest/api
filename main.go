@@ -14,6 +14,25 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+type Stat struct {
+	Cost    int    `json:"cost,omitempty"`
+	Name    string `json:"name,omitempty"`
+	Primary []struct {
+		Name  string    `json:"name,omitempty"`
+		Ranks []float64 `json:"ranks,omitempty"`
+	} `json:"primary,omitempty"`
+	Secondary []struct {
+		Name  string    `json:"name,omitempty"`
+		Ranks []float64 `json:"ranks,omitempty"`
+	} `json:"secondary,omitempty"`
+}
+
+type Substat struct {
+	Name string  `json:"name,omitempty"`
+	Min  float64 `json:"min,omitempty"`
+	Max  float64 `json:"max,omitempty"`
+}
+
 type Character struct {
 	Name       string `json:"name"`
 	Quote      string `json:"quote,omitempty"`
@@ -25,37 +44,53 @@ type Character struct {
 	Birthday   string `json:"birthday,omitempty"`
 }
 
+type Sonata struct {
+	Name      string `json:"name,omitempty"`
+	TwoPiece  string `json:"twoPiece,omitempty"`
+	FivePiece string `json:"fivePiece,omitempty"`
+}
+
+type Echo struct {
+	Name          string        `json:"name,omitempty"`
+	Cost          int           `json:"cost,omitempty"`
+	SonataEffects []string      `json:"sonataEffects,omitempty"`
+	Outline       string        `json:"outline,omitempty"`
+	Description   string        `json:"description,omitempty"`
+	Ranks         []interface{} `json:"ranks,omitempty"`
+	Cooldown      string        `json:"cooldown,omitempty"`
+}
+
 type Attribute struct {
-	Name       string      `json:"name"`
+	Name       string      `json:"name,omitempty"`
 	Characters []Character `json:"characters,omitempty"`
 }
 
 type Emojis struct {
-	Emojis []string `json:"emojis"`
+	Emojis []string `json:"emojis,omitempty"`
 }
 
 type Weapon struct {
-	Name        string `json:"name"`
-	Description string `json:"description"`
-	Type        string `json:"type"`
-	Rarity      int    `json:"rarity"`
+	Name        string `json:"name,omitempty"`
+	Description string `json:"description,omitempty"`
+	Type        string `json:"type,omitempty"`
+	Rarity      int    `json:"rarity,omitempty"`
 	Stats       struct {
-		Attack  int `json:"atk"`
+		Attack  int `json:"atk,omitempty"`
 		Substat struct {
-			SubName  string `json:"name"`
-			SubValue string `json:"value"`
-		} `json:"substat"`
-	} `json:"stats"`
+			SubName  string `json:"name,omitempty"`
+			SubValue string `json:"value,omitempty"`
+		} `json:"substat,omitempty"`
+	} `json:"stats,omitempty"`
 	Skill struct {
-		Name        string `json:"name"`
-		Description string `json:"description"`
+		Name        string `json:"name,omitempty"`
+		Description string `json:"description,omitempty"`
 		Ranks       []struct {
-			Zero  string `json:"0"`
-			One   string `json:"1"`
-			Three string `json:"3"`
-			Four  string `json:"4"`
-			Five  string `json:"5"`
-		} `json:"ranks"`
+			Zero  string `json:"0,omitempty"`
+			One   string `json:"1,omitempty"`
+			Three string `json:"3,omitempty"`
+			Four  string `json:"4,omitempty"`
+			Five  string `json:"5,omitempty"`
+		} `json:"ranks,omitempty"`
 	} `json:"skill,omitempty"`
 }
 
@@ -90,6 +125,30 @@ func main() {
 		return
 	}
 
+	echoes, err := echoesLoad("data/echoes.json")
+	if err != nil {
+		fmt.Println("Error loading echoes:", err)
+		return
+	}
+
+	sonatas, err := sonatasLoad("data/sonatas.json")
+	if err != nil {
+		fmt.Println("Error loading sonatas:", err)
+		return
+	}
+
+	stats, err := statsLoad("data/stats.json")
+	if err != nil {
+		fmt.Println("Error loading stats:", err)
+		return
+	}
+
+	substats, err := substatsLoad("data/substats.json")
+	if err != nil {
+		fmt.Println("Error loading substats:", err)
+		return
+	}
+
 	totalWeapons := 0
 	for _, weaponList := range weapons {
 		totalWeapons += len(weaponList)
@@ -99,7 +158,7 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{
 			"version":    "1.0",
 			"docs":       docsURL,
-			"statistics": gin.H{"attributes": len(attributes), "characters": len(characters), "weapons": totalWeapons},
+			"statistics": gin.H{"attributes": len(attributes), "characters": len(characters), "weapons": totalWeapons, "echoes": len(echoes)},
 		})
 	})
 
@@ -110,6 +169,7 @@ func main() {
 	r.GET("/codes", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{"codes": []string{"WUTHERINGGIFT"}})
 	})
+
 	// EMOJIS
 
 	r.GET("/characters/:name/emojis", func(c *gin.Context) {
@@ -147,8 +207,6 @@ func main() {
 			return
 		}
 	})
-
-	//r.StaticFS("/cdn/emojis/", http.Dir("./cdn/emojis/"))
 
 	// CHARACTERS
 
@@ -335,14 +393,116 @@ func main() {
 		}
 	})
 
-	r.Run(":8080")
-}
+	r.GET("/echoes", func(c *gin.Context) {
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+			return
+		}
+		var echoNames []string
+		for _, echo := range echoes {
+			echoNames = append(echoNames, echo.Name)
+		}
+		c.JSON(http.StatusOK, gin.H{"echoes": echoNames})
+	})
 
-func Middleware() gin.HandlerFunc {
-	return func(c *gin.Context) {
-		c.Request.URL.Path = strings.ToLower(c.Request.URL.Path)
-		c.Next()
-	}
+	r.GET("/echoes/:name", func(c *gin.Context) {
+		name := strings.ReplaceAll(strings.ToLower(c.Param("name")), "_", " ")
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+			return
+		}
+		for _, echo := range echoes {
+			if strings.ToLower(echo.Name) == name {
+				c.JSON(http.StatusOK, echo)
+				return
+			}
+		}
+		c.JSON(http.StatusNotFound, gin.H{"message": "Echo not found", "docs": docsURL})
+	})
+
+	r.GET("/echoes/sonatas", func(c *gin.Context) {
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+			return
+		}
+		var sonataNames []string
+		for _, sonata := range sonatas {
+			sonataNames = append(sonataNames, sonata.Name)
+		}
+		c.JSON(http.StatusOK, gin.H{"sonatas": sonataNames})
+	})
+
+	r.GET("/echoes/sonatas/:name", func(c *gin.Context) {
+		name := strings.ReplaceAll(strings.ToLower(c.Param("name")), "_", " ")
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+			return
+		}
+		for _, sonata := range sonatas {
+			if strings.ToLower(sonata.Name) == name {
+				c.JSON(http.StatusOK, sonata)
+				return
+			}
+		}
+		c.JSON(http.StatusNotFound, gin.H{"message": "Sonata not found", "docs": docsURL})
+	})
+
+	r.GET("/echoes/stats", func(c *gin.Context) {
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+			return
+		}
+		var statNames []string
+		for _, stat := range stats {
+			statNames = append(statNames, stat.Name)
+		}
+		c.JSON(http.StatusOK, gin.H{"stats": statNames})
+	})
+
+	r.GET("/echoes/stats/:name", func(c *gin.Context) {
+		name := strings.ReplaceAll(strings.ToLower(c.Param("name")), "_", " ")
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+			return
+		}
+		for _, stat := range stats {
+			if strings.ToLower(stat.Name) == name {
+				c.JSON(http.StatusOK, stat)
+				return
+			}
+		}
+		c.JSON(http.StatusNotFound, gin.H{"message": "Stat not found", "docs": docsURL})
+	})
+
+	r.GET("/echoes/substats", func(c *gin.Context) {
+		substats, err := substatsLoad("data/substats.json")
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+			return
+		}
+		var substatNames []string
+		for _, substat := range substats {
+			substatNames = append(substatNames, substat.Name)
+		}
+		c.JSON(http.StatusOK, gin.H{"substats": substatNames})
+	})
+
+	r.GET("/echoes/substats/:name", func(c *gin.Context) {
+		name := strings.ReplaceAll(strings.ToLower(c.Param("name")), "_", " ")
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+			return
+		}
+		for _, substat := range substats {
+			if strings.ToLower(substat.Name) == name {
+				c.JSON(http.StatusOK, substat)
+				return
+			}
+		}
+		c.JSON(http.StatusNotFound, gin.H{"message": "Substat not found", "docs": docsURL})
+	})
+
+	r.Run(":8080")
 }
 
 func charactersLoad(filename string) ([]Character, error) {
@@ -417,6 +577,66 @@ func loadWeapons(filename string) (map[string][]Weapon, error) {
 	return weapons, nil
 }
 
+func echoesLoad(filename string) ([]Echo, error) {
+	file, err := os.Open(filename)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+
+	var echoes []Echo
+	if err := json.NewDecoder(file).Decode(&echoes); err != nil {
+		return nil, err
+	}
+
+	return echoes, nil
+}
+
+func sonatasLoad(filename string) ([]Sonata, error) {
+	file, err := os.Open(filename)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+
+	var sonatas []Sonata
+	if err := json.NewDecoder(file).Decode(&sonatas); err != nil {
+		return nil, err
+	}
+
+	return sonatas, nil
+}
+
+func statsLoad(filename string) ([]Stat, error) {
+	file, err := os.Open(filename)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+
+	var stats []Stat
+	if err := json.NewDecoder(file).Decode(&stats); err != nil {
+		return nil, err
+	}
+
+	return stats, nil
+}
+
+func substatsLoad(filename string) ([]Substat, error) {
+	file, err := os.Open(filename)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+
+	var substats []Substat
+	if err := json.NewDecoder(file).Decode(&substats); err != nil {
+		return nil, err
+	}
+
+	return substats, nil
+}
+
 var (
 	rateLimit    = 200
 	requestCount = make(map[string]int)
@@ -447,6 +667,13 @@ func rateLimitMiddleware() gin.HandlerFunc {
 			requestCount[ip] = 0
 		}()
 
+		c.Next()
+	}
+}
+
+func Middleware() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		c.Request.URL.Path = strings.ToLower(c.Request.URL.Path)
 		c.Next()
 	}
 }
