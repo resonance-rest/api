@@ -1,1 +1,284 @@
-{}
+[
+  {
+    "name": "Aero Predator",
+    "cost": 1,
+    "sonataEffects": ["Sierra Gale", "Void Thunder"],
+    "outline": "Summon an Aero Predator to deal Aero DMG.",
+    "description": "Summon an Aero Predator that throws a dart forward. The dart will bounce between enemies up to three times, dealing {0}% Aero DMG each time it hits.",
+    "ranks": [20.7, 23.4, 26.1, 28.8],
+    "cooldown": "8s"
+  },
+  {
+    "name": "Chirpuff",
+    "cost": 1,
+    "sonataEffects": ["Sierra Gale", "Sun-sinking Eclipse"],
+    "outline": "Summon a Chirpuff to blast a powerful gust of wind. Deals Aero DMG and knocks enemies back.",
+    "description": "Summon a Chirpuff that self-inflates and blasts a powerful gust of wind forward 3 times. Each blast inflicts {0}% Aero DMG and pushes enemies backwards.",
+    "ranks": [27.6, 31.2, 34.8, 38.4],
+    "cooldown": "8s"
+  },
+  {
+    "name": "Cruisewing",
+    "cost": 1,
+    "sonataEffects": ["Celestial Light", "Rejuvenating Glow", "Moonlit Clouds"],
+    "outline": "Summon a Cruisewing to heal friendly units.",
+    "description": "Summon a Cruisewing that restores HP for all current team characters by {0}% of their Max HPs plus an additional 80 points of HP, up to 4 times.",
+    "ranks": [1.2, 1.4, 1.6, 1.8],
+    "cooldown": "8s"
+  },
+  {
+    "name": "Diamondclaw",
+    "cost": 1,
+    "sonataEffects": ["Moonlit Clouds", "Lingering Tunes"],
+    "outline": "Transform into Diamondclaw to enter a Defense Stance. Counterattack to deal Physical DMG.",
+    "description": "Transform into Crystal Scorpion and enter a Parry State. Counterattack when the Parry State is over, dealing {0}%+{1} Physical DMG.",
+    "ranks": [
+      { "2": 34.5, "3": 39.0, "4": 43.5, "5": 48.0 },
+      { "2": 69, "3": 78, "4": 87, "5": 96 }
+    ],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  },
+  {
+    "name": "",
+    "cost": 1,
+    "sonataEffects": [],
+    "outline": "",
+    "description": "",
+    "ranks": [],
+    "cooldown": "8s"
+  }
+]
