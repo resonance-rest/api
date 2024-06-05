@@ -291,120 +291,144 @@
     "cooldown": "15s"
   },
   {
-    "name": "",
+    "name": "Autopuppet Scout",
     "cost": 3,
-    "sonataEffects": [],
-    "outline": "",
-    "description": "",
-    "ranks": [],
-    "cooldown": "8s"
+    "sonataEffects": ["Freezing Frost", "Celestial Light"],
+    "outline": "Transform into Autopuppet Scout, to deal Glacio DMG to enemies nearby and generate Ice Walls.",
+    "description": "Transform into Autopuppet Scout, dealing {0}% Glacio DMG to the surroundings, and generate up to 3 Ice Walls to block off the enemies.",
+    "ranks": [195.5, 221.0, 246.5, 272],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Chaserazor",
+    "cost": 3,
+    "sonataEffects": ["Sierra Gale", "Moonlit Clouds"],
+    "outline": "Transform into Carapace to perform spinning attacks, dealing Aero DMG.",
+    "description": "Transform into Carapace to perform a spinning attack that deals {0}% Aero DMG, followed by a slash that deals {1}% Aero DMG.",
+    "ranks": [
+      { "2": 80.5, "3": 91.0, "4": 101.5, "5": 112.0 },
+      { "2": 120.75, "3": 136.5, "4": 152.25, "5": 168.0 }
+    ],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Chasm Guardian",
+    "cost": 3,
+    "sonataEffects": ["Rejuvenating Glow", "Lingering Tunes"],
+    "outline": "Transform into Chasm Guardian to perform a powerful strike that deals Havoc DMG. Lose some HP on hit and then recover HP over time.",
+    "description": "Transform into Chasm Guardian to perform a Leap Strike that deals {0}% Havoc DMG on hit. Current character loses 10.00% HP after the hit lands. Periodically restore current character's HP after 5s for up to 10.00% of their Max HP.",
+    "ranks": [196.65, 222.3, 247.95, 273.6],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Cyan-Feathered Heron",
+    "cost": 3,
+    "sonataEffects": ["Sierra Gale", "Celestial Light"],
+    "outline": "Transform into Cyan-Feathered Heron to charge at the enemies, dealing Aero DMG and interrupt enemy Special Skill.",
+    "description": "Transform into Cyan-Feathered Heron and charge at the enemies, dealing {0}% Aero DMG. This Echo Skill interrupts enemy Special Skills upon dealing damage.",
+    "ranks": [170.2, 192.4, 214.6, 236.8],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Geohide Saurian",
+    "cost": 3,
+    "sonataEffects": ["Molten Rift", "Moonlit Clouds"],
+    "outline": "Summon a Viridblaze Saurian to continuously spit fire, dealing Fusion DMG.",
+    "description": "Summon a Viridblaze Saurian to continuously spit fire, dealing {0}% Fusion DMG 10 times.",
+    "ranks": [12.31, 13.91, 15.52, 17.12],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Havoc Dreadmane",
+    "cost": 3,
+    "sonataEffects": ["Molten Rift", "Sun-sinking Eclipse"],
+    "outline": "Transform into a Havoc Dreadmane to launch tail strikes, dealing Havoc DMG.",
+    "description": "Transform into Havoc Dreadmane to perform tail strikes up to 2 times. Each strike deals {0}% Havoc DMG. An additional strike will be performed on hit, dealing {1}% Havoc DMG.",
+    "ranks": [
+      { "2": 83.84, "3": 94.77, "4": 105.71, "5": 116.64 },
+      { "2": 55.89, "3": 63.18, "4": 70.47, "5": 77.76 }
+    ],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Hoochief",
+    "cost": 3,
+    "sonataEffects": ["Sierra Gale", "Rejuvenating Glow"],
+    "outline": "Transform into Hoochief Cyclone to deal Aero DMG.",
+    "description": "Transform into Hoochief Cyclone and smack the enemies, dealing {0}% Aero DMG.",
+    "ranks": [178.8, 208.6, 238.4, 268.2],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Rocksteady Guardian",
+    "cost": 3,
+    "sonataEffects": ["Celestial Light", "Rejuvenating Glow"],
+    "outline": "Transform into the Rocksteady Guardian to enter a Parry Stance. Counterattack when hit by Special Skill to interrupt enemy Special Skills and deal Spectro DMG based on Max HP.",
+    "description": "Transform into Rocksteady Guardian and enter a Parry State. Upon being attacked, deal Spectro DMG equal to {0}% of the current character's Max HP, and perform a follow-up attack that deals Spectro DMG equal to {1}% of the current character's Max HP.",
+    "ranks": [
+      { "2": 5.96, "3": 6.73, "4": 7.51, "5": 8.29 },
+      { "2": 5.96, "3": 6.73, "4": 7.51, "5": 8.29 }
+    ],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Roseshroom",
+    "cost": 3,
+    "sonataEffects": ["Freezing Frost", "Sun-sinking Eclipse"],
+    "outline": "Summon a Roseshroom to fire a laser, and deal Havoc DMG.",
+    "description": "Summon a Roseshroom that fires a laser, dealing {0}% Havoc DMG up to 3 times.",
+    "ranks": [41.02, 46.37, 51.72, 57.07],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Spearback",
+    "cost": 3,
+    "sonataEffects": ["Moonlit Clouds", "Lingering Tunes"],
+    "outline": "Summon a Spearback to perform continuous claw strikes, dealing Physical DMG.",
+    "description": "Summon a Spearback to perform 5 consecutive attacks. The first 4 attacks deal {0}% Physical DMG, and the last deals {1}% Physical DMG.",
+    "ranks": [
+      { "2": 21.53, "3": 24.34, "4": 27.15, "5": 29.96 },
+      { "2": 36.92, "3": 41.73, "4": 46.55, "5": 51.36 }
+    ],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Stonewall Bracer",
+    "cost": 3,
+    "sonataEffects": ["Rejuvenating Glow", "Moonlit Clouds"],
+    "outline": "Transform into Stonewall Bracer and charge forward. Successful hits grant a follow-up strike and a shield.",
+    "description": "Transform into Stonewall Bracer and charge forward, dealing {0}% Physical DMG on-hit, then smash to deal {1}% Physical DMG, and gain a shield of 10.00% of current character's Max HP. Use the Echo skill again to exit the transformation state.",
+    "ranks": [
+      { "2": 80.96, "3": 91.52, "4": 102.08, "5": 112.64 },
+      { "2": 121.44, "3": 137.28, "4": 153.12, "5": 168.96 }
+    ],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Tambourinist",
+    "cost": 3,
+    "sonataEffects": ["Freezing Frost", "Sun-sinking Eclipse"],
+    "outline": "Summon a Tambourinist to let friendly units inflict additional Havoc DMG.",
+    "description": "Summon a Tambourinist that periodically emits Melodies of Annihilation. Friendly units hit with Melodies of Annihilation deal an extra Havoc DMG of {0}% with their attacks, up to 10 times.",
+    "ranks": [10.35, 11.7, 13.05, 14.4],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Violet-Feathered Heron",
+    "cost": 3,
+    "sonataEffects": ["Molten Rift", "Void Thunder"],
+    "outline": "Transform into Violet-Feathered Heron to block enemy attacks. Counterattack to deal Electro DMG and recover Concerto Energy.",
+    "description": "Transform into Violet-Feathered Heron and enter a Parry Stance. Counterattack when the Parry Stance is over, dealing {0}% Electro DMG. If attacked during Parry Stance, you can counterattack in advance and additionally recover 5 Concerto Energy.",
+    "ranks": [207.0, 234.0, 261.0, 288.0],
+    "cooldown": "15s"
   },
   {
     "name": "",
-    "cost": 3,
+    "cost": 4,
     "sonataEffects": [],
     "outline": "",
     "description": "",
     "ranks": [],
-    "cooldown": "8s"
-  },
-  {
-    "name": "",
-    "cost": 3,
-    "sonataEffects": [],
-    "outline": "",
-    "description": "",
-    "ranks": [],
-    "cooldown": "8s"
-  },
-  {
-    "name": "",
-    "cost": 3,
-    "sonataEffects": [],
-    "outline": "",
-    "description": "",
-    "ranks": [],
-    "cooldown": "8s"
-  },
-  {
-    "name": "",
-    "cost": 3,
-    "sonataEffects": [],
-    "outline": "",
-    "description": "",
-    "ranks": [],
-    "cooldown": "8s"
-  },
-  {
-    "name": "",
-    "cost": 3,
-    "sonataEffects": [],
-    "outline": "",
-    "description": "",
-    "ranks": [],
-    "cooldown": "8s"
-  },
-  {
-    "name": "",
-    "cost": 3,
-    "sonataEffects": [],
-    "outline": "",
-    "description": "",
-    "ranks": [],
-    "cooldown": "8s"
-  },
-  {
-    "name": "",
-    "cost": 3,
-    "sonataEffects": [],
-    "outline": "",
-    "description": "",
-    "ranks": [],
-    "cooldown": "8s"
-  },
-  {
-    "name": "",
-    "cost": 3,
-    "sonataEffects": [],
-    "outline": "",
-    "description": "",
-    "ranks": [],
-    "cooldown": "8s"
-  },
-  {
-    "name": "",
-    "cost": 3,
-    "sonataEffects": [],
-    "outline": "",
-    "description": "",
-    "ranks": [],
-    "cooldown": "8s"
-  },
-  {
-    "name": "",
-    "cost": 3,
-    "sonataEffects": [],
-    "outline": "",
-    "description": "",
-    "ranks": [],
-    "cooldown": "8s"
-  },
-  {
-    "name": "",
-    "cost": 3,
-    "sonataEffects": [],
-    "outline": "",
-    "description": "",
-    "ranks": [],
-    "cooldown": "8s"
-  },
-  {
-    "name": "",
-    "cost": 3,
-    "sonataEffects": [],
-    "outline": "",
-    "description": "",
-    "ranks": [],
-    "cooldown": "8s"
+    "cooldown": "15s"
   }
 ]
