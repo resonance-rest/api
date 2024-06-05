@@ -1,0 +1,15 @@
+[
+  { "name": "HP", "min": 260, "max": 740 },
+  { "name": "DEF", "min": 30, "max": 90 },
+  { "name": "ATK", "min": 20, "max": 70 },
+  { "name": "HP%", "min": 5.2, "max": 15 },
+  { "name": "DEF%", "min": 6.6, "max": 16.9 },
+  { "name": "ATK%", "min": 5.2, "max": 15 },
+  { "name": "Crit Rate", "min": 4.9, "max": 10.4 },
+  { "name": "Crit Dmg", "min": 9.8, "max": 20.4 },
+  { "name": "Energy Regen", "min": 5.6, "max": 14.9 },
+  { "name": "Basic Attack Dmg Bonus", "min": 4.2, "max": 11.8 },
+  { "name": "Heavy Attack Dmg Bonus", "min": 4.2, "max": 11.8 },
+  { "name": "Resonance Skill Dmg Bonus", "min": 4.3, "max": 12.0 },
+  { "name": "Resonance Liberation Dmg Bonus", "min": 4.2, "max": 12.0 }
+]
