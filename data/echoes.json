@@ -1,0 +1,570 @@
+[
+  {
+    "name": "Aero Predator",
+    "cost": 1,
+    "sonataEffects": ["Sierra Gale", "Void Thunder"],
+    "outline": "Summon an Aero Predator to deal Aero DMG.",
+    "description": "Summon an Aero Predator that throws a dart forward. The dart will bounce between enemies up to three times, dealing {0}% Aero DMG each time it hits.",
+    "ranks": [20.7, 23.4, 26.1, 28.8],
+    "cooldown": "8s"
+  },
+  {
+    "name": "Chirpuff",
+    "cost": 1,
+    "sonataEffects": ["Sierra Gale", "Sun-sinking Eclipse"],
+    "outline": "Summon a Chirpuff to blast a powerful gust of wind. Deals Aero DMG and knocks enemies back.",
+    "description": "Summon a Chirpuff that self-inflates and blasts a powerful gust of wind forward 3 times. Each blast inflicts {0}% Aero DMG and pushes enemies backwards.",
+    "ranks": [27.6, 31.2, 34.8, 38.4],
+    "cooldown": "8s"
+  },
+  {
+    "name": "Cruisewing",
+    "cost": 1,
+    "sonataEffects": ["Celestial Light", "Rejuvenating Glow", "Moonlit Clouds"],
+    "outline": "Summon a Cruisewing to heal friendly units.",
+    "description": "Summon a Cruisewing that restores HP for all current team characters by {0}% of their Max HPs plus an additional 80 points of HP, up to 4 times.",
+    "ranks": [1.2, 1.4, 1.6, 1.8],
+    "cooldown": "8s"
+  },
+  {
+    "name": "Diamondclaw",
+    "cost": 1,
+    "sonataEffects": ["Moonlit Clouds", "Lingering Tunes"],
+    "outline": "Transform into Diamondclaw to enter a Defense Stance. Counterattack to deal Physical DMG.",
+    "description": "Transform into Crystal Scorpion and enter a Parry State. Counterattack when the Parry State is over, dealing {0}%+{1} Physical DMG.",
+    "ranks": [
+      { "2": 34.5, "3": 39.0, "4": 43.5, "5": 48.0 },
+      { "2": 69, "3": 78, "4": 87, "5": 96 }
+    ],
+    "cooldown": "8s"
+  },
+  {
+    "name": "Electro Predator",
+    "cost": 1,
+    "sonataEffects": ["Molten Rift", "Void Thunder"],
+    "outline": "Summon an Electro Predator to fire a rain of arrows, dealing Electro DMG.",
+    "description": "Summon an Electro Predator to shoot the enemy 5 times. The first 4 shots deals {0}% Electro DMG, and the last deals {1}% Electro DMG.",
+    "ranks": [
+      { "2": 12.42, "3": 14.04, "4": 15.66, "5": 17.28 },
+      { "2": 33.12, "3": 37.44, "4": 41.76, "5": 46.08 }
+    ],
+    "cooldown": "8s"
+  },
+  {
+    "name": "Excarat",
+    "cost": 1,
+    "sonataEffects": ["Freezing Frost", "Sun-sinking Eclipse"],
+    "outline": "Transform into Excarat to quickly advance and become immune to damage.",
+    "description": "Transform into an Excarat and tunnel underground to advance. In this state, you have the ability to change your direction and are immune to damage.",
+    "ranks": [],
+    "cooldown": "2s"
+  },
+  {
+    "name": "Fission Junrock",
+    "cost": 1,
+    "sonataEffects": ["Void Thunder", "Rejuvenating Glow", "Moonlit Clouds"],
+    "outline": "Summon a Fission Junrock for healing. If not in combat, it picks up minerals or plants nearby for you.",
+    "description": "Summon a Fission Junrock. Generate a Resonance Effect that restores 2% HP for friendly units each time. If not in combat, you can pick up minerals or plants nearby.",
+    "ranks": [],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Fusion Dreadmane",
+    "cost": 1,
+    "sonataEffects": ["Molten Rift", "Rejuvenating Glow"],
+    "outline": "Summon a Fusion Dreadmane to fiercely strike the enemies, dealing Fusion DMG.",
+    "description": "Summon a Fusion Dreadmane that fiercely strike's the enemy, dealing {0}%+{1} Fusion DMG.",
+    "ranks": [
+      { "2": 23.0, "3": 26.0, "4": 29.0, "5": 32.0 },
+      { "2": 46, "3": 52, "4": 58, "5": 64 }
+    ],
+    "cooldown": "8s"
+  },
+  {
+    "name": "Fusion Prism",
+    "cost": 1,
+    "sonataEffects": ["Freezing Frost", "Molten Rift", "Lingering Tunes"],
+    "outline": "Summon a Fusion Prism that deals Fusion DMG with crystal shards.",
+    "description": "Summon a Fusion Prism to fire a crystal shard, dealing {0}%+{1} Fusion DMG.",
+    "ranks": [
+      { "2": 23.0, "3": 26.0, "4": 29.0, "5": 32.0 },
+      { "2": 46, "3": 52, "4": 58, "5": 64 }
+    ],
+    "cooldown": "8s"
+  },
+  {
+    "name": "Fusion Warrior",
+    "cost": 1,
+    "sonataEffects": ["Molten Rift", "Void Thunder", "Sierra Gale"],
+    "outline": "Transform into Fusion Warrior to block enemy attacks. Deal Fusion DMG and reduce this Echo Skill's CD when the block is successful.",
+    "description": "Transform into Fusion Warrior to perform a Counterattack. If the Counterattack is successful, the cooldown time of this skill will be reduced by 70%, and Fusion DMG will be dealt.",
+    "ranks": [],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Glacio Predator",
+    "cost": 1,
+    "sonataEffects": ["Freezing Frost", "Celestial Light"],
+    "outline": "Summon a Glacio Predator to throw ice spears and deal Glacio DMG.",
+    "description": "Summon a Glacio Predator that throws an ice spear, dealing {0}% Glacio DMG on hit. Deal {1}% Glacio DMG up to 10 times during the charging time, and {2}% Glacio DMG when the spear explodes.",
+    "ranks": [
+      { "2": 33.12, "3": 37.44, "4": 41.76, "5": 46.08 },
+      { "2": 3.31, "3": 3.74, "4": 4.18, "5": 4.61 },
+      { "2": 16.56, "3": 18.72, "4": 20.88, "5": 23.04 }
+    ],
+    "cooldown": "8s"
+  },
+  {
+    "name": "Glacio Prism",
+    "cost": 1,
+    "sonataEffects": [
+      "Freezing Frost",
+      "Sun-sinking Eclipse",
+      "Moonlit Clouds"
+    ],
+    "outline": "Summon a Glacio Prism that deals Glacio DMG with crystal shards.",
+    "description": "Summon a Glacio Prism that continuously fires three crystal shards, each dealing {0}% Glacio DMG.",
+    "ranks": [27.6, 31.2, 34.8, 38.4],
+    "cooldown": "8s"
+  },
+  {
+    "name": "Gulpuff",
+    "cost": 1,
+    "sonataEffects": ["Freezing Frost", "Celestial Light"],
+    "outline": "Summon a Gulpuff to blow bubbles and cause Glacio damage.",
+    "description": "Summon a Gulpuff that blows bubbles 5 times, each time dealing {0}% Glacio DMG.",
+    "ranks": [16.56, 18.72, 20.88, 23.04],
+    "cooldown": "8s"
+  },
+  {
+    "name": "Havoc Prism",
+    "cost": 1,
+    "sonataEffects": ["Void Thunder", "Celestial Light", "Sun-sinking Eclipse"],
+    "outline": "Summon a Havoc Prism that deals Havoc DMG with crystal shards.",
+    "description": "Summon a Havoc Prism to fire five crystal shards, each dealing {0}% Havoc DMG.",
+    "ranks": [16.56, 18.72, 20.88, 23.04],
+    "cooldown": "8s"
+  },
+  {
+    "name": "Havoc Warrior",
+    "cost": 1,
+    "sonataEffects": ["Celestial Light", "Sun-sinking Eclipse"],
+    "outline": "Transform into a Havoc Warrior to continuously deal Havoc DMG.",
+    "description": "Transform into Havoc Warrior to attack up to 3 times, dealing {0}% Havoc DMG each time.",
+    "ranks": [123.43, 139.53, 155.63, 171.73],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Hoartoise",
+    "cost": 1,
+    "sonataEffects": ["Freezing Frost", "Celestial Light"],
+    "outline": "Transform into a Hoartoise and slowly restore HP.",
+    "description": "Transform into Hoartoise and slowly restore HP. Use the Echo skill again to exit the transformation state.",
+    "ranks": [],
+    "cooldown": "2s"
+  },
+  {
+    "name": "Hooscamp",
+    "cost": 1,
+    "sonataEffects": ["Sierra Gale", "Lingering Tunes"],
+    "outline": "Transform into Hooscamp Flinger and pounce, dealing Aero DMG.",
+    "description": "Transform into Hooscamp Flinger and pounce at the enemies, dealing {0}%+{1} Aero DMG.",
+    "ranks": [
+      { "2": 34.5, "3": 39.0, "4": 43.5, "5": 48.0 },
+      { "2": 69, "3": 78, "4": 87, "5": 96 }
+    ],
+    "cooldown": "8s"
+  },
+  {
+    "name": "Sabyr Boar",
+    "cost": 1,
+    "sonataEffects": ["Freezing Frost", "Sierra Gale", "Moonlit Clouds"],
+    "outline": "Summon a Sabyr Boar to charge and deal Physical DMG.",
+    "description": "Summon a Sabyr Boar to headbutt the enemy into the air, dealing {0}%+{1} Physical DMG.",
+    "ranks": [
+      { "2": 23.0, "3": 26.0, "4": 29.0, "5": 32.0 },
+      { "2": 46, "3": 52, "4": 58, "5": 64 }
+    ],
+    "cooldown": "8s"
+  },
+  {
+    "name": "Snip Snap",
+    "cost": 1,
+    "sonataEffects": ["Molten Rift", "Rejuvenating Glow", "Lingering Tunes"],
+    "outline": "Summon a Snip Snap that throws fireballs, dealing Fusion DMG.",
+    "description": "Summon a Snip Snap that throws fireballs at the enemy, dealing {0}%+{1} Fusion DMG on-hit.",
+    "ranks": [
+      { "2": 23.0, "3": 26.0, "4": 29.0, "5": 32.0 },
+      { "2": 46, "3": 52, "4": 58, "5": 64 }
+    ],
+    "cooldown": "8s"
+  },
+  {
+    "name": "Spectro Prism",
+    "cost": 1,
+    "sonataEffects": ["Molten Rift", "Void Thunder", "Celestial Light"],
+    "outline": "Summon a Spectro Prism that deals Spectro DMG with laser.",
+    "description": "Summon a Spectro Prism to emit a laser that hits the enemy up to 8 times, dealing {0}% Spectro DMG each time.",
+    "ranks": [10.35, 11.7, 13.05, 14.4],
+    "cooldown": "8s"
+  },
+  {
+    "name": "Tick Tack",
+    "cost": 1,
+    "sonataEffects": [
+      "Sun-sinking Eclipse",
+      "Rejuvenating Glow",
+      "Lingering Tunes"
+    ],
+    "outline": "Summon a Tick Tack that deals Havoc DMG and reduces enemy Vibration Strength.",
+    "description": "Summon a Tick Tack that charges and bites the enemy. The charge from Tick Tack will deal {0}% Havoc DMG to the enemy, and the bite will deal {1}% Havoc DMG to the enemy. Reduces enemy Vibration Strength by up to 5.00% during 5s.",
+    "ranks": [
+      { "2": 49.22, "3": 55.64, "4": 62.06, "5": 68.48 },
+      { "2": 73.83, "3": 83.46, "4": 93.09, "5": 102.72 }
+    ],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Traffic Illuminator",
+    "cost": 1,
+    "sonataEffects": ["Molten Rift", "Void Thunder", "Sierra Gale"],
+    "outline": "Summon a Traffic Illuminator to immobilize the enemies.",
+    "description": "Summon a Traffic Illuminator, immobilizing enemies for up to 1s. The immobilization will be lifted once the enemy is hit.",
+    "ranks": [],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Vanguard Junrock",
+    "cost": 1,
+    "sonataEffects": ["Void Thunder", "Rejuvenating Glow", "Lingering Tunes"],
+    "outline": "Summon a Vanguard Junrock that charges forward, dealing Physical DMG to enemies in its path.",
+    "description": "Summon a Vanguard Junrock that charges forward, dealing {0}%+{1} Physical DMG to enemies in its path.",
+    "ranks": [
+      { "2": 23.0, "3": 26.0, "4": 29.0, "5": 32.0 },
+      { "2": 46, "3": 52, "4": 58, "5": 64 }
+    ],
+    "cooldown": "8s"
+  },
+  {
+    "name": "Whiff Whaff",
+    "cost": 1,
+    "sonataEffects": ["Sierra Gale", "Rejuvenating Glow", "Moonlit Clouds"],
+    "outline": "Summon a Whiff Whaff that deals Aero DMG and produces a Low-pressure Zone.",
+    "description": "Summon a Whiff Whaff that triggers an air explosion, dealing {0}% Aero DMG and produce a Low-pressure Zone. The Low-pressure Zone continuously pulls enemies nearby towards the center for 2s, dealing {1}% Aero DMG up to 6 times.",
+    "ranks": [
+      { "2": 36.92, "3": 41.73, "4": 46.55, "5": 51.36 },
+      { "2": 14.35, "3": 16.22, "4": 18.1, "5": 19.97 }
+    ],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Young Geohide Saurian",
+    "cost": 1,
+    "sonataEffects": ["Molten Rift", "Void Thunder", "Lingering Tunes"],
+    "outline": "Transform into a Baby Viridblaze Saurian, rest in place to restore HP.",
+    "description": "Transform into Baby Viridblaze Saurian to rest in place, and slowly restore HP.",
+    "ranks": [],
+    "cooldown": "2s"
+  },
+  {
+    "name": "Young Roseshroom",
+    "cost": 1,
+    "sonataEffects": ["Sierra Gale", "Sun-sinking Eclipse"],
+    "outline": "Summon a Baby Roseshroom to fire a laser, and deal Havoc DMG.",
+    "description": "Summon a Baby Roseshroom that fires a laser, dealing {0}%+{1} Havoc DMG.",
+    "ranks": [
+      { "2": 23.0, "3": 26.0, "4": 29.0, "5": 32.0 },
+      { "2": 46, "3": 52, "4": 58, "5": 64 }
+    ],
+    "cooldown": "8s"
+  },
+  {
+    "name": "Zig Zag",
+    "cost": 1,
+    "sonataEffects": ["Celestial Light", "Moonlit Clouds", "Lingering Tunes"],
+    "outline": "Summon a Zig Zag that deals Spectro DMG, and creates a Stagnation Zone.",
+    "description": "Summon a Zig Zag that denotates Spectro energy, dealing 34.50%+69 Spectro DMG and creating a Stagnation Zone that lasts 1.8s.",
+    "ranks": [
+      { "2": 34.5, "3": 39.0, "4": 43.5, "5": 48.0 },
+      { "2": 69, "3": 78, "4": 87, "5": 96 }
+    ],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Autopuppet Scout",
+    "cost": 3,
+    "sonataEffects": ["Freezing Frost", "Celestial Light"],
+    "outline": "Transform into Autopuppet Scout, to deal Glacio DMG to enemies nearby and generate Ice Walls.",
+    "description": "Transform into Autopuppet Scout, dealing {0}% Glacio DMG to the surroundings, and generate up to 3 Ice Walls to block off the enemies.",
+    "ranks": [195.5, 221.0, 246.5, 272],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Chaserazor",
+    "cost": 3,
+    "sonataEffects": ["Sierra Gale", "Moonlit Clouds"],
+    "outline": "Transform into Carapace to perform spinning attacks, dealing Aero DMG.",
+    "description": "Transform into Carapace to perform a spinning attack that deals {0}% Aero DMG, followed by a slash that deals {1}% Aero DMG.",
+    "ranks": [
+      { "2": 80.5, "3": 91.0, "4": 101.5, "5": 112.0 },
+      { "2": 120.75, "3": 136.5, "4": 152.25, "5": 168.0 }
+    ],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Chasm Guardian",
+    "cost": 3,
+    "sonataEffects": ["Rejuvenating Glow", "Lingering Tunes"],
+    "outline": "Transform into Chasm Guardian to perform a powerful strike that deals Havoc DMG. Lose some HP on hit and then recover HP over time.",
+    "description": "Transform into Chasm Guardian to perform a Leap Strike that deals {0}% Havoc DMG on hit. Current character loses 10.00% HP after the hit lands. Periodically restore current character's HP after 5s for up to 10.00% of their Max HP.",
+    "ranks": [196.65, 222.3, 247.95, 273.6],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Cyan-Feathered Heron",
+    "cost": 3,
+    "sonataEffects": ["Sierra Gale", "Celestial Light"],
+    "outline": "Transform into Cyan-Feathered Heron to charge at the enemies, dealing Aero DMG and interrupt enemy Special Skill.",
+    "description": "Transform into Cyan-Feathered Heron and charge at the enemies, dealing {0}% Aero DMG. This Echo Skill interrupts enemy Special Skills upon dealing damage.",
+    "ranks": [170.2, 192.4, 214.6, 236.8],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Geohide Saurian",
+    "cost": 3,
+    "sonataEffects": ["Molten Rift", "Moonlit Clouds"],
+    "outline": "Summon a Viridblaze Saurian to continuously spit fire, dealing Fusion DMG.",
+    "description": "Summon a Viridblaze Saurian to continuously spit fire, dealing {0}% Fusion DMG 10 times.",
+    "ranks": [12.31, 13.91, 15.52, 17.12],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Havoc Dreadmane",
+    "cost": 3,
+    "sonataEffects": ["Molten Rift", "Sun-sinking Eclipse"],
+    "outline": "Transform into a Havoc Dreadmane to launch tail strikes, dealing Havoc DMG.",
+    "description": "Transform into Havoc Dreadmane to perform tail strikes up to 2 times. Each strike deals {0}% Havoc DMG. An additional strike will be performed on hit, dealing {1}% Havoc DMG.",
+    "ranks": [
+      { "2": 83.84, "3": 94.77, "4": 105.71, "5": 116.64 },
+      { "2": 55.89, "3": 63.18, "4": 70.47, "5": 77.76 }
+    ],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Hoochief",
+    "cost": 3,
+    "sonataEffects": ["Sierra Gale", "Rejuvenating Glow"],
+    "outline": "Transform into Hoochief Cyclone to deal Aero DMG.",
+    "description": "Transform into Hoochief Cyclone and smack the enemies, dealing {0}% Aero DMG.",
+    "ranks": [178.8, 208.6, 238.4, 268.2],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Rocksteady Guardian",
+    "cost": 3,
+    "sonataEffects": ["Celestial Light", "Rejuvenating Glow"],
+    "outline": "Transform into the Rocksteady Guardian to enter a Parry Stance. Counterattack when hit by Special Skill to interrupt enemy Special Skills and deal Spectro DMG based on Max HP.",
+    "description": "Transform into Rocksteady Guardian and enter a Parry State. Upon being attacked, deal Spectro DMG equal to {0}% of the current character's Max HP, and perform a follow-up attack that deals Spectro DMG equal to {1}% of the current character's Max HP.",
+    "ranks": [
+      { "2": 5.96, "3": 6.73, "4": 7.51, "5": 8.29 },
+      { "2": 5.96, "3": 6.73, "4": 7.51, "5": 8.29 }
+    ],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Roseshroom",
+    "cost": 3,
+    "sonataEffects": ["Freezing Frost", "Sun-sinking Eclipse"],
+    "outline": "Summon a Roseshroom to fire a laser, and deal Havoc DMG.",
+    "description": "Summon a Roseshroom that fires a laser, dealing {0}% Havoc DMG up to 3 times.",
+    "ranks": [41.02, 46.37, 51.72, 57.07],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Spearback",
+    "cost": 3,
+    "sonataEffects": ["Moonlit Clouds", "Lingering Tunes"],
+    "outline": "Summon a Spearback to perform continuous claw strikes, dealing Physical DMG.",
+    "description": "Summon a Spearback to perform 5 consecutive attacks. The first 4 attacks deal {0}% Physical DMG, and the last deals {1}% Physical DMG.",
+    "ranks": [
+      { "2": 21.53, "3": 24.34, "4": 27.15, "5": 29.96 },
+      { "2": 36.92, "3": 41.73, "4": 46.55, "5": 51.36 }
+    ],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Stonewall Bracer",
+    "cost": 3,
+    "sonataEffects": ["Rejuvenating Glow", "Moonlit Clouds"],
+    "outline": "Transform into Stonewall Bracer and charge forward. Successful hits grant a follow-up strike and a shield.",
+    "description": "Transform into Stonewall Bracer and charge forward, dealing {0}% Physical DMG on-hit, then smash to deal {1}% Physical DMG, and gain a shield of 10.00% of current character's Max HP. Use the Echo skill again to exit the transformation state.",
+    "ranks": [
+      { "2": 80.96, "3": 91.52, "4": 102.08, "5": 112.64 },
+      { "2": 121.44, "3": 137.28, "4": 153.12, "5": 168.96 }
+    ],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Tambourinist",
+    "cost": 3,
+    "sonataEffects": ["Freezing Frost", "Sun-sinking Eclipse"],
+    "outline": "Summon a Tambourinist to let friendly units inflict additional Havoc DMG.",
+    "description": "Summon a Tambourinist that periodically emits Melodies of Annihilation. Friendly units hit with Melodies of Annihilation deal an extra Havoc DMG of {0}% with their attacks, up to 10 times.",
+    "ranks": [10.35, 11.7, 13.05, 14.4],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Violet-Feathered Heron",
+    "cost": 3,
+    "sonataEffects": ["Molten Rift", "Void Thunder"],
+    "outline": "Transform into Violet-Feathered Heron to block enemy attacks. Counterattack to deal Electro DMG and recover Concerto Energy.",
+    "description": "Transform into Violet-Feathered Heron and enter a Parry Stance. Counterattack when the Parry Stance is over, dealing {0}% Electro DMG. If attacked during Parry Stance, you can counterattack in advance and additionally recover 5 Concerto Energy.",
+    "ranks": [207.0, 234.0, 261.0, 288.0],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Bell-Borne Geochelone",
+    "class": "Calamity",
+    "cost": 4,
+    "sonataEffects": ["Rejuvenating Glow", "Moonlit Clouds"],
+    "outline": "Activate the protection of Bell-Borne Geochelone, dealing Glacio DMG to nearby enemies based on current character's DEF. Reduce incoming damage, increase damage dealt.",
+    "description": "Activate the protection of Bell-Borne Geochelone. Deal Glacio DMG based on {0}% of the current character's DEF to nearby enemies, and obtain a Bell-Borne Shield that lasts for 15s. The Bell-Borne Shield provides 50.00% DMG Reduction and 10.0% DMG Boost for the current team members, and disappears after the current character is hit for 3 times.",
+    "ranks": [104.88, 118.56, 132.24, 145.92],
+    "cooldown": "20s"
+  },
+  {
+    "name": "Crownless",
+    "class": "Overlord",
+    "cost": 4,
+    "sonataEffects": ["Sun-sinking Eclipse"],
+    "outline": "Transform into Crownless and relentlessly assault enemies, dealing Havoc DMG. Increase current character's Havoc DMG and Resonance Skill DMG.",
+    "description": "Transform into Crownless and perform up to 4 consecutive attacks. The first 2 attacks deal {0}% Havoc DMG each, the 3rd attack deals {1}% Havoc DMG 2 times, and the 4th attack deals {2}% Havoc DMG 3 times. After the transformation, increase current character's Havoc DMG by 12.00% and Resonance Skill DMG by 12.00% for 15s.",
+    "ranks": [
+      { "2": 96.37, "3": 108.94, "4": 121.51, "5": 134.08 },
+      { "2": 72.28, "3": 81.71, "4": 91.13, "5": 100.56 },
+      { "2": 48.19, "3": 54.47, "4": 60.76, "5": 67.04 }
+    ],
+    "cooldown": "20s"
+  },
+  {
+    "name": "Feilian Beringal",
+    "class": "Overlord",
+    "cost": 4,
+    "sonataEffects": ["Sierra Gale"],
+    "outline": "Transform into Feilian Beringal to continuously attack enemies, dealing Aero DMG. Increase current character's Aero DMG and Heavy Attack DMG.",
+    "description": "Transform into Feilian Beringal to perform a powerful kick. If the kick lands on an enemy, immediately perform a follow up strike. The kick deals {0}% Aero DMG, and the follow-up strike deals {1}% Aero DMG. After the follow-up strike hits, the current character's Aero DMG increases by 12.00%, and the Heavy Attack DMG increases by 12.00% for 15s.",
+    "ranks": [
+      { "2": 166.64, "3": 188.37, "4": 210.11, "5": 231.84 },
+      { "2": 203.67, "3": 230.23, "4": 256.8, "5": 283.36 }
+    ],
+    "cooldown": "20s"
+  },
+  {
+    "name": "Impermanence Heron",
+    "class": "Overlord",
+    "cost": 4,
+    "sonataEffects": ["Moonlit Clouds"],
+    "outline": "Transform into Impermanence Heron to deal Havoc DMG. Long press to spit flames and continuously deal Havoc DMG. Once the attacks hit any enemy, restore current character's Resonance Energy. Increase next character's damage dealt.",
+    "description": "Transform into Impermanence Heron to fly up and smack down, dealing 223.22% Havoc DMG. Long press to stay as Impermanence Heron and continuously spit flames, each attack dealing 40.05% Havoc DMG. Once the initial attack lands on any enemy, the current character regains 10 Resonance Energy. If the current charact uses their Outro Skill within the next 15s, the next character's damage dealt will be boosted by 12% for 15s.",
+    "ranks": [
+      { "2": 223.22, "3": 252.33, "4": 281.45, "5": 310.56 },
+      { "2": 40.05, "3": 45.28, "4": 50.5, "5": 55.73 }
+    ],
+    "cooldown": "20s"
+  },
+  {
+    "name": "Inferno Rider",
+    "class": "Overlord",
+    "cost": 4,
+    "sonataEffects": ["Molten Rift"],
+    "outline": "Transform into Inferno Rider to perform consecutive strikes, dealing Fusion DMG. Increase current character's Fusion DMG and Basic Attack DMG. Long press Echo Skill to enter the Riding Mode.",
+    "description": "Transform into Inferno Rider to launch up to 3 consecutive slashes in a row, each slash dealing {0}%, {1}%, and {2}% Fusion DMG respectively. After the final hit, increase the current character's Fusion DMG by 12.00% and Basic Attack DMG by 12.00% for 15s. Long press the Echo Skill to transform into Inferno Rider and enter the Riding Mode. When exiting the Riding Mode, deal 12.00% Fusion DMG to enemies in front.",
+    "ranks": [
+      { "2": 174.23, "3": 196.95, "4": 219.68, "5": 242.4 },
+      { "2": 203.26, "3": 229.78, "4": 256.29, "5": 282.8 },
+      { "2": 203.26, "3": 229.78, "4": 256.29, "5": 282.8 }
+    ],
+    "cooldown": "20s"
+  },
+  {
+    "name": "Lampylumen Myriad",
+    "class": "Overlord",
+    "cost": 4,
+    "sonataEffects": ["Freezing Frost"],
+    "outline": "Transform into Lampylumen Myriad to continuously attack enemies, dealing Glacio damage. Increase current character's Glacio DMG and Resonance Skill DMG.",
+    "description": "Transform into Lampylumen Myriad. Perform up to 3 consecutive attacks. Unleash a freezing shock by performing consecutive forward strikes, with the initial two strikes inflicting {0}% and {1}% Glacio DMG respectively, and the final strike dealing {2}% Glacio DMG. Enemies will be frozen on hit. Each shock increases the current character's Glacio DMG by 4.00% and Resonance Skill DMG dealt by 4.00% for 15s, stacking up to 3 times. ",
+    "ranks": [
+      { "2": 143.87, "3": 162.63, "4": 181.4, "5": 220.16 },
+      { "2": 143.87, "3": 162.63, "4": 181.4, "5": 200.16 },
+      { "2": 191.82, "3": 216.84, "4": 241.86, "5": 266.88 }
+    ],
+    "cooldown": "20s"
+  },
+  {
+    "name": "Mech Abomination",
+    "class": "Overlord",
+    "cost": 4,
+    "sonataEffects": ["Lingering Tunes"],
+    "outline": "Deal Electro DMG to enemies nearby and create Mech Waste that explodes in a while. Increase current character's ATK.",
+    "description": "Strike the enemies in front, dealing {0}% Electro DMG. Summon Mech Waste to attack enemies. Mech Waste deals {1}% Electro DMG on-hit and explode after a while to deal {2}% Electro DMG. After casting this Echo Skill, increase current character's ATK by 12.00% for 15s. Damage dealt by Mech Waste is considered Outro Skill DMG.",
+    "ranks": [
+      { "2": 34.96, "3": 39.52, "4": 44.08, "5": 48.64 },
+      { "2": 230.0, "3": 260.0, "4": 290.0, "5": 320.0 },
+      { "2": 115.0, "3": 130.0, "4": 145.0, "5": 160.0 }
+    ],
+    "cooldown": "15s"
+  },
+  {
+    "name": "Mourning Aix",
+    "class": "Overlord",
+    "cost": 4,
+    "sonataEffects": ["Celestial Light"],
+    "outline": "Transform into Mourning Aix to continuously attack enemies, dealing Spectro damage. Increase current character's Spectro DMG and Resonance Liberation DMG.",
+    "description": "Transform into Mourning Aix and perform 2 consecutive claw attacks, each attack dealing {0}% and {1}% Spectro DMG respectively. After the transformation, increase current character's Spectro DMG by 12.00% and Resonance Liberation DMG by 12.00% for 15s.",
+    "ranks": [
+      { "2": 113.16, "3": 127.92, "4": 142.68, "5": 157.44 },
+      { "2": 169.74, "3": 191.88, "4": 214.02, "5": 236.16 }
+    ],
+    "cooldown": "20s"
+  },
+  {
+    "name": "Tempest Mephis",
+    "class": "Overlord",
+    "cost": 4,
+    "sonataEffects": ["Void Thunder"],
+    "outline": "Transform into Tempest Mephis to continuously attack enemies, dealing Electro damage. Increase current character's Electro DMG & Heavy Attack DMG.",
+    "description": "Transform into Tempest Mephis to perform tail swing attacks followed by a claw attack. The lightning strike summoned by the tail swing deals {0}% Electro DMG each time, while the claw attack deals {1}% Electro DMG. After the claw hit, increase the current character's Electro DMG by 12.00% and Heavy Attack DMG by 12.00% for 15s.",
+    "ranks": [
+      { "2": 73.66, "3": 83.27, "4": 92.87, "5": 102.48 },
+      { "2": 126.27, "3": 142.74, "4": 159.21, "5": 175.68 }
+    ],
+    "cooldown": "20s"
+  },
+  {
+    "name": "Thundering Mephis",
+    "class": "Overlord",
+    "cost": 4,
+    "sonataEffects": ["Void Thunder"],
+    "outline": "Transform into Thundering Mephis to deal Electro DMG. Increase the current character's Electro DMG and Resonance Liberation DMG.",
+    "description": "Transform into Thundering Mephis, engaging in a rapid assault of up to 6 strikes. The first 5 strikes deal {0}% Electro DMG each, while the final strike inflicts {1}% Electro DMG, with an additional {2}% Electro DMG from the thunder. After the final hit, increase the current character's Electro DMG by 12.00% and Resonance Liberation DMG by 12.00% for 15s.",
+    "ranks": [
+      { "2": 95.31, "3": 107.74, "4": 120.18, "5": 132.61 },
+      { "2": 131.16, "3": 153.92, "4": 171.68, "5": 189.44 },
+      { "2": 22.69, "3": 25.65, "4": 28.61, "5": 31.57 }
+    ],
+    "cooldown": "20s"
+  },
+  {
+    "name": "Dreamless",
+    "class": "Calamity",
+    "cost": 4,
+    "sonataEffects": ["Sun-sinking Eclipse"],
+    "outline": "Transform into Dreamless to continuously attack enemies and deal Havoc DMG. This Echo Skill deals more damage after Rover-Havoc casts their Resonance Liberation.",
+    "description": "Transform into Dreamless and perform 6 consecutive attacks. The first 5 attacks deal {0}% Havoc DMG each, and the last attack deal {1}% Havoc DMG. The DMG of this Echo Skill is increased by 50.00% during the first 5s after Rover-Havoc casts Resonance Liberation: Deadening Abyss.",
+    "ranks": [
+      { "2": 38.87, "3": 43.94, "4": 49.01, "5": 54.08 },
+      { "2": 194.35, "3": 219.7, "4": 245.05, "5": 270.4 }
+    ],
+    "cooldown": "20s"
+  }
+]
