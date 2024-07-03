@@ -1,3 +1,5 @@
+<h1>I AM TAKING A BREAK, IF YOU WANT TO HELP, PULL REQUEST ON API</h1>
+
 # 🔗 Unofficial API for Wuthering Waves on [**api.resonance.rest**](https://api.resonance.rest) - made with [**Go**](https://go.dev/), stored data in **JSON** and deployed on [**Railway**](https://railway.app).
 
 ### This is **not** a final version, I need people to complete the game data, if you are interested, write me on [**Telegram**](https://t.me/whosneksio).
