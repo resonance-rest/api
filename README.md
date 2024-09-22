@@ -179,7 +179,7 @@
 
 | Parameter | Type     | Description                             |
 | :-------- | :------- | :-------------------------------------- |
-| `name`    | `string` | **Required** · name of an substat       |
+| `name`    | `string` | **Required** · name of an stat          |
 
 #### Get substats list
 

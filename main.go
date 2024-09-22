@@ -131,19 +131,19 @@ func main() {
 		return
 	}
 
-	sonatas, err := sonatasLoad("data/sonatas.json")
+	sonatas, err := sonatasLoad("data/echoes/sonatas.json")
 	if err != nil {
 		fmt.Println("Error loading sonatas:", err)
 		return
 	}
 
-	stats, err := statsLoad("data/stats.json")
+	stats, err := statsLoad("data/echoes/stats.json")
 	if err != nil {
 		fmt.Println("Error loading stats:", err)
 		return
 	}
 
-	substats, err := substatsLoad("data/substats.json")
+	substats, err := substatsLoad("data/echoes/substats.json")
 	if err != nil {
 		fmt.Println("Error loading substats:", err)
 		return
