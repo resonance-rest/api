@@ -131,7 +131,7 @@ func main() {
 		return
 	}
 
-	sonatas, err := sonatasLoad("data/echoes/sonatas.json")
+	sonatas, err := sonatasLoad("data/sonatas.json")
 	if err != nil {
 		fmt.Println("Error loading sonatas:", err)
 		return
@@ -475,7 +475,7 @@ func main() {
 	})
 
 	r.GET("/echoes/substats", func(c *gin.Context) {
-		substats, err := substatsLoad("data/substats.json")
+		substats, err := substatsLoad("data/echoes/substats.json")
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 			return
