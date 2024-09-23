@@ -231,7 +231,7 @@ func main() {
 		c.JSON(http.StatusNotFound, gin.H{"message": "Character not found", "docs": docsURL})
 	})
 
-	for _, path := range []string{"portrait", "icon", "circle"} {
+	for _, path := range []string{"portrait", "icon", "circle", "card"} {
 		r.GET(fmt.Sprintf("/characters/:name/%s", path), func(c *gin.Context) {
 			name := strings.ToLower(c.Param("name"))
 			remoteURL := fmt.Sprintf("%scharacters/%ss/%s.png", cdnURL, path, name)
