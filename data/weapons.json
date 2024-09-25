@@ -1,5 +1,5 @@
 {
-    "Gauntlets": [
+    "gauntlets": [
         {
             "name": "Abyss Surges",
             "description": "The Gauntlets pulsate with an uncontrollable force, emanating unspeakable anger from the depths of the unknown lake. As you don them, unleash your fury on helpless enemies. Feel its power surge through you.",
@@ -325,7 +325,7 @@
             }
         }
     ],
-    "Rectifier": [
+    "rectifier": [
         {
             "name": "Augment",
             "description": "This Rectifier is a ceremonial weapon used by the Jinzhou Magistrate of Huanglong at the inauguration ceremony. The golden ginkgo leaf pattern represents that Huanglong should be like ginkgo, although it is left alone in the world, it is still prosperous and long-lasting.",
@@ -837,7 +837,7 @@
             }
         }
     ],
-    "Broadblade": [
+    "broadblade": [
         {
             "name": "Autumntrace",
             "type": "Broadblade",
@@ -930,7 +930,7 @@
             "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010012_UI"
         }
     ],
-    "Pistols": [
+    "pistols": [
         {
             "name": "Cadenza",
             "type": "Pistols",
@@ -1009,7 +1009,7 @@
             "IconMiddle": "/Game/Aki/UI/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030012_UI"
         }
     ],
-    "Sword": [
+    "sword": [
         {
             "name": "Commando of Conviction",
             "type": "Sword",

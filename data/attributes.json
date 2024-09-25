@@ -4,7 +4,8 @@
         "characters": [
             {"name": "Chixia"},
             {"name": "Encore"},
-            {"name": "Mortefi"}
+            {"name": "Mortefi"},
+            {"name": "Changli"}
         ]
     },
     {
@@ -12,7 +13,8 @@
         "characters": [
             {"name": "Baizhi"},
             {"name": "Lingyang"},
-            {"name": "Sanhua"}
+            {"name": "Sanhua"},
+            {"name": "Zhezhi"}
         ]
     },
     {
@@ -29,13 +31,15 @@
         "characters": [
             {"name": "Calcharo"},
             {"name": "Yinlin"},
-            {"name": "Yuanwu"}
+            {"name": "Yuanwu"},
+            {"name": "Xiangli Yao"}
         ]
     },
     {
         "name": "Spectro",
         "characters": [
-            {"name": "Verina"}
+            {"name": "Verina"},
+            {"name": "Jinhsi"}
         ]
     },
     {
