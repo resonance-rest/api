@@ -20,26 +20,29 @@ func ListCharactersHandler(characters []models.Character) gin.HandlerFunc {
 	}
 }
 
+
 func GetCharacterHandler(characters []models.Character) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		name := strings.ToLower(c.Param("name"))
+		name = strings.ReplaceAll(name, " ", "%20")
 
 		for _, character := range characters {
-			if strings.ToLower(character.Name) == name {
+			if strings.ToLower(strings.ReplaceAll(character.Name, " ", "%20")) == name {
 				c.JSON(http.StatusOK, character)
 				return
 			}
 		}
 
-		NotFoundHandler(c, "Character not found") 
+		NotFoundHandler(c, "Character not found")
 	}
 }
 
 func CharacterEmojisHandler(c *gin.Context) {
 	name := c.Param("name")
+	name = strings.ReplaceAll(name, " ", "%20")
 	emojiList, err := loadEmojis(name)
 	if err != nil {
-		
+		NotFoundHandler(c, "Failed to load emojis")
 		return
 	}
 	c.JSON(http.StatusOK, emojiList)
@@ -47,6 +50,7 @@ func CharacterEmojisHandler(c *gin.Context) {
 
 func CharacterEmojiHandler(c *gin.Context) {
 	name := c.Param("name")
+	name = strings.ReplaceAll(name, " ", "%20")
 	index := c.Param("index")
 
 	emojiURL := fmt.Sprintf("%semojis/%s/%s.png", cdnURL, name, index)
@@ -73,6 +77,7 @@ func CharacterEmojiHandler(c *gin.Context) {
 
 func CharacterImageHandler(c *gin.Context) {
 	name := strings.ToLower(c.Param("name"))
+	name = strings.ReplaceAll(name, " ", "_")
 	imageType := c.Param("imagetype")
 
 	validTypes := map[string]bool{
@@ -123,7 +128,8 @@ func loadEmojis(charName string) (*models.Emojis, error) {
 }
 
 func emojisPerCharacter(name string, index string) (string, error) {
-	emojiURL := fmt.Sprintf("%semojis/%s/%s.png", cdnURL, name, index)
+	name = strings.ReplaceAll(name, " ", "_")
+	emojiURL := fmt.Sprintf("%scharacters/emojis/%s/%s.png", cdnURL, name, index)
 	resp, err := http.Get(emojiURL)
 	if err != nil {
 		return "", err

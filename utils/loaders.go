@@ -39,6 +39,8 @@ func LoadCharacters(dirPath string) ([]models.Character, error) {
 			return nil, fmt.Errorf("error loading character from %s: %v", file.Name(), err)
 		}
 
+		character.Name = strings.ReplaceAll(character.Name, " ", "%20")
+
 		characters = append(characters, character)
 	}
 
