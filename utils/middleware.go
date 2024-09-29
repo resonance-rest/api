@@ -6,6 +6,7 @@ import (
 	"strings"
 	"sync"
 	"time"
+	"net/url"
 )
 
 var (
@@ -46,6 +47,16 @@ func RateLimitMiddleware() gin.HandlerFunc {
 func LowercaseMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		c.Request.URL.Path = strings.ToLower(c.Request.URL.Path)
+
+		lowercaseQuery := make(url.Values)
+		for key, values := range c.Request.URL.Query() {
+			lowercaseKey := strings.ToLower(key)
+			for _, value := range values {
+				lowercaseQuery.Add(lowercaseKey, strings.ToLower(value))
+			}
+		}
+		c.Request.URL.RawQuery = lowercaseQuery.Encode()
+
 		c.Next()
 	}
 }

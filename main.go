@@ -23,7 +23,7 @@ func main() {
 	r.Use(cors.New(config))
 
 	// Load data
-	characters, err := utils.LoadCharacters("data/characters.json")
+	characters, err := utils.LoadCharacters("data/characters")
 	if err != nil {
 		log.Fatalf("Error loading characters: %v", err)
 	}
