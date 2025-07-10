@@ -1,4 +1,4 @@
-<h1>I AM TAKING A BREAK, IF YOU WANT TO HELP, PULL REQUEST ON API</h1>
+### Discontinued
 
 # 🔗 Unofficial API for Wuthering Waves on [**api.resonance.rest**](https://api.resonance.rest) - made with [**Go**](https://go.dev/), stored data in **JSON** and deployed on [**Railway**](https://railway.app).
 
